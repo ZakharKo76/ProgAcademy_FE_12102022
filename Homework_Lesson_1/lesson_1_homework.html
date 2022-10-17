@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework_1|12.10.2022</title>
+    <!-- стили -->
+    <style>
+      body {
+        font-size: 18px;
+      }
+      span {
+        display: block;
+        text-align: center;
+        margin: 12px 0;
+      }
+      /* стили для первой секции */
+      .first {
+        font-family: "Calibri", serif;
+        width: 670px;
+        margin: auto;
+      }
+      .first li {
+        margin: 14px 0;
+      }
+      /* стили для второй секции */
+      .second {
+        margin-left: 25px;
+        font-family: "Times New Roman", Times, serif;
+        width: 700px;
+        margin: auto;
+      }
+      .second p::first-letter {
+        color: red;
+        font-size: 25px;
+      }
+      /* стили для третьей секции */
+      .third {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 700px;
+        margin: auto;
+      }
+      .third ul {
+        counter-reset: list;
+        /* list-style-type: none; */
+        margin-left: 20px;
+        padding-left: 0;
+      }
+      .third ul li {
+        line-height: 2rem;
+        padding-left: 30px;
+      }
+      .third ul li::before {
+        counter-increment: list;
+        content: counters(list, ".") ". ";
+      }
+      /* стили для второго уровня списка */
+      .third ul:nth-child(2) {
+        margin-left: -30px;
+        list-style-type: disc;
+      }
+
+      .third ul:nth-child(2) li {
+        padding-left: 80px;
+      }
+      /* стили для линии */
+      hr {
+        border: none;
+        border-top: 3px double #333;
+        color: #333;
+        overflow: visible;
+        text-align: center;
+        margin: 25px 0;
+      }
+      hr:after {
+        background: #fff;
+        content: "TO TOP";
+        padding: 0 4px;
+        position: relative;
+        top: -13px;
+      }
+      .line {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#" id="top"></a>
+    <!-- первая секция - первое задание домашней работы -->
+    <section class="first">
+      <h1 style="font-size: 1.25rem; font-weight: normal">
+        <em>Формулы и свойства степеней</em>
+      </h1>
+      <p>
+        <strong>Свойства и формулы степеней</strong> используются при сокращении
+        и упрощении сложных выражений, при <a href="#">решении уравнений</a> и
+        неравенств. Свойства степеней можно использовать совместно c
+        <a href="#">таблицей степеней</a> и <a href="#"> таблицей умножения </a
+        >.
+        <br />
+        <span>
+          a<sup>1</sup> = a, a<sup>0</sup> = 1 (a ≠ 0), a<sup>-n</sup>
+          = 1/a<sup>n</sup>.
+        </span>
+      </p>
+      <ul>
+        <li>a<sup>m</sup>a<sup>n</sup> = a<sup>m+n</sup> ;</li>
+        <li>a<sup>m</sup>/a<sup>n</sup> = a<sup>m-n</sup> ;</li>
+        <li>(ab)<sup>n</sup> = a<sup>n</sup>b<sup>n</sup> ;</li>
+        <li>(am)<sup>n</sup> = a<sup>mn</sup> ;</li>
+        <li>(a/b)<sup>n</sup> = a<sup>n</sup>/b<sup>n</sup>.</li>
+      </ul>
+      <p>
+        Если после изучения данного теоретического материала (Формулы и свойства
+        степеней) У Вас возникли проблемы при решении задач на данную тему или
+        появились вопросы образовательного характера, то Вы всегда можете задать
+        их на нашем <a href="#">форуме</a>.
+      </p>
+    </section>
+    <a href="#top" class="line">
+      <hr />
+    </a>
+    <!-- вторая секция - второе задание домашней работы -->
+    <section class="second">
+      <span style="color: rgb(157, 151, 151); font-size: 25px"
+        >Оскар Уайльд
+      </span>
+      <p>Атеизм нуждается в религии ничуть не меньше, чем вера.</p>
+      <p>
+        Большинство из нас - это не мы. Наши мысли - это чужие суждения; наша
+        жизнь - мимикрия; наши страсти - цитата!
+      </p>
+      <p>
+        Быть эгоистом - это не значит жить, как тебе хочется. Это значит просить
+        других, чтобы они жили так, как тебе бы хотелось.
+      </p>
+      <p>В наш век люди слишком много читают, это мешает им быть мудрыми.</p>
+      <p>
+        В поведении людей, которых разлюбили, всегда есть что-то нелепое.
+        Вопросы никогда не бывают нескромными. В отличие от ответов.
+      </p>
+      <p>Все можно пережить, кроме смерти.</p>
+      <p>
+        Всякий раз, когда человек допускает глупость, он делает это из самых
+        благородных побуждений.
+      </p>
+      <p>Выбирать врагов следует с особым тщанием.</p>
+      <p>
+        Добрая половина современной культуры зиждется на том, чего читать не
+        следует.
+      </p>
+      <p>
+        Душа рождается старой и постепенно молодеет. Это комедийная сторона
+        жизни. Тело же рождается молодым и постепенно стареет. А это сторона
+        трагедийная.
+      </p>
+      <p>
+        Единственная разница между святым и грешником в том, что у святого есть
+        прошлое, а у грешника - будущее.
+      </p>
+      <p>
+        Единственное, что мы можем сказать о человеческой природе, это то, что
+        она изменяется. Изменение - это единственное качество, которое можно
+        предсказать. Системы, которые терпят неудачу, это те, что полагаются на
+        неизменность человеческой природы, а не на ее рост и развитие.
+      </p>
+      <p>
+        Единственный наш долг перед историей - это постоянно ее переписывать.
+      </p>
+    </section>
+    <a href="#top" class="line">
+      <hr />
+    </a>
+    <!-- третья секция - третье задание домашней работы -->
+    <section class="third" id="third">
+      <span style="font-size: 24px">Язык разметки HTML</span>
+      <span><small>Содержание</small></span>
+      <ul>
+        <li>
+          <a href="#third">Общее представление</a>
+        </li>
+        <li><a href="#third">Браузеры</a></li>
+        <li><a href="#third">Версии</a></li>
+        <li><a href="#third">Перспективы</a></li>
+        <li>
+          <a href="#third">Структура HTML-документа</a>
+          <ul>
+            <li><a href="#third">Варианты DOCTYPE для HTML 4.01</a></li>
+            <li><a href="#third">Варианты DOCTYPE для HTML 5</a></li>
+          </ul>
+        </li>
+        <li><a href="#third">Браузерные войны</a></li>
+        <li><a href="#third">Примечани</a>я</li>
+        <li><a href="#third">См. также</a></li>
+        <li><a href="#third">Ссылки</a></li>
+        <li><a href="#third">Литература</a></li>
+      </ul>
+    </section>
+  </body>
+</html>
