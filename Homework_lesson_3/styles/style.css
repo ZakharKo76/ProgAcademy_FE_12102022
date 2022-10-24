@@ -22,6 +22,7 @@ body {
   height: 90%;
   width: 90%;
   background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
   background-position: right 5%;
   background-size: 130%;
   justify-content: flex-end;
@@ -151,6 +152,87 @@ body {
   background-color: ivory;
   color: #fd646a;
   box-shadow: 0 0 20px #fd646a;
+}
+
+/* адаптив для экранов с шириной менее 360px */
+
+@media (max-width: 360px) {
+  .banner {
+    background-image: url(../img/background_1024.jpg);
+    background-size: contain;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    margin: 49% auto 0;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 5px 5px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 10px;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
+}
+
+/* адаптив для экранов с шириной от 361px до 600px*/
+
+@media (min-width: 361px) and (max-width: 600px) {
+  .banner {
+    background-image: url(../img/background_1024.jpg);
+    background-size: contain;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    margin: 49% auto 0;
+    justify-content: flex-end;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 5px 5px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 10px;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
+}
+@media (min-width: 601px) and (max-width: 720px) {
+  .banner {
+    background-image: url(../img/background_1366.jpg);
+  }
+}
+@media (min-width: 721px) and (max-width: 1024px) {
+  .banner {
+    background-image: url(../img/background_1920.jpg);
+  }
 }
 
 /* styles for the second banner */
