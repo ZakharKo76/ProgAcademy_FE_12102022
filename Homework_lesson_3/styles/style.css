@@ -1,4 +1,4 @@
-/* common styles */
+/* ========================== common styles ========================== */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* styles for the first banner */
+/* ========================== styles for the first banner ========================== */
 
 .banner {
   margin: 5vh auto;
@@ -154,88 +154,7 @@ body {
   box-shadow: 0 0 20px #fd646a;
 }
 
-/* адаптив для экранов с шириной менее 360px */
-
-@media (max-width: 360px) {
-  .banner {
-    background-image: url(../img/background_1024.jpg);
-    background-size: contain;
-    justify-content: center;
-  }
-  .banner__aside {
-    width: 100%;
-    margin: 49% auto 0;
-  }
-  .aside__title,
-  .aside__subtitle,
-  .aside__text {
-    width: 95%;
-    padding: 5px 5px;
-  }
-  .aside__text p {
-    padding: 0 5px;
-  }
-  .banner__dots {
-    left: calc(50% - 17.5vh);
-  }
-  .banner__scroll {
-    right: calc(50% - 7.5vw);
-    bottom: 10px;
-    width: 15vw;
-    height: 12vw;
-  }
-  .scroll__button {
-    font-size: 10vw;
-  }
-}
-
-/* адаптив для экранов с шириной от 361px до 600px*/
-
-@media (min-width: 361px) and (max-width: 600px) {
-  .banner {
-    background-image: url(../img/background_1024.jpg);
-    background-size: contain;
-    justify-content: center;
-  }
-  .banner__aside {
-    width: 100%;
-    margin: 49% auto 0;
-    justify-content: flex-end;
-  }
-  .aside__title,
-  .aside__subtitle,
-  .aside__text {
-    width: 95%;
-    padding: 5px 5px;
-  }
-  .aside__text p {
-    padding: 0 5px;
-  }
-  .banner__dots {
-    left: calc(50% - 17.5vh);
-  }
-  .banner__scroll {
-    right: calc(50% - 7.5vw);
-    bottom: 10px;
-    width: 15vw;
-    height: 12vw;
-  }
-  .scroll__button {
-    font-size: 10vw;
-  }
-}
-@media (min-width: 601px) and (max-width: 720px) {
-  .banner {
-    background-image: url(../img/background_1366.jpg);
-  }
-}
-@media (min-width: 721px) and (max-width: 1024px) {
-  .banner {
-    background-image: url(../img/background_1920.jpg);
-  }
-}
-
-/* styles for the second banner */
+/* =================== styles for the second banner ===================*/
 
 .banner-2 {
   height: 100%;
@@ -286,4 +205,152 @@ body {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+/* =================== АДАПТИВ ======================= */
+/* адаптив для экранов с шириной менее 360px */
+
+@media (max-width: 360px) {
+  .banner {
+    background-image: url(../img/background_1024.jpg);
+    background-size: contain;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    margin: 49% auto 0;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 5px 5px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 10px;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
+}
+
+/* адаптив для экранов с шириной от 361px до 600px*/
+
+@media (min-width: 361px) and (max-width: 600px) {
+  .banner {
+    background-image: url(../img/background_1024.jpg);
+    background-size: contain;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    margin: 20vh auto 0;
+    justify-content: flex-end;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 5px 5px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+    top: 83vh;
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 10px;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
+}
+
+/* адаптив для экранов с шириной от 601px до 720px*/
+
+@media (min-width: 601px) and (max-width: 720px) {
+  .banner {
+    background-image: url(../img/background_1366.jpg);
+    background-size: contain;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    margin: 20vh auto 0;
+    justify-content: flex-end;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 5px 5px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+    top: 83vh;
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 10px;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
+}
+/* адаптив для экранов с шириной от 721px до 1024px*/
+@media (min-width: 721px) and (max-width: 1024px) {
+  .banner {
+    background: url(../img/background_1920.jpg) center;
+    justify-content: center;
+  }
+  .banner__aside {
+    width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    justify-content: flex-end;
+    line-height: 30px;
+    font-size: 130%;
+  }
+  .aside__title,
+  .aside__subtitle,
+  .aside__text {
+    width: 95%;
+    padding: 35px 15px;
+  }
+  .aside__text p {
+    padding: 0 5px;
+    text-align: center;
+  }
+  .banner__dots {
+    left: calc(50% - 17.5vh);
+    top: 75vh;
+  }
+  .banner__scroll {
+    right: calc(50% - 7.5vw);
+    bottom: 7vh;
+    width: 15vw;
+    height: 12vw;
+  }
+  .scroll__button {
+    font-size: 10vw;
+  }
 }
