@@ -168,16 +168,18 @@ body {
 .banner-2__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 40%;
   width: 35%;
   text-align: center;
+  color: ivory;
 }
 
 .banner-2__title,
 .banner-2__subtitle,
 .btn-2 {
   margin: 5px auto;
-  color: ivory;
+  color: inherit;
 }
 
 .banner-2__title,
