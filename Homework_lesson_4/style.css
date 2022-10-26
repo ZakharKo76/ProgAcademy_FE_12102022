@@ -18,9 +18,8 @@ body,
 .blue,
 .yellow {
   border-style: ridge;
-  border-width: 8px;
-  background-color: transparent;
-  box-shadow: 3px 3px 3px grey, inset 3px 3px 3px grey ;
+  border-width: 7px;
+  box-shadow: 3px 3px 3px grey, inset 3px 3px 3px grey;
 }
 
 .parent,
@@ -32,6 +31,7 @@ body,
 .blue {
   justify-content: space-evenly;
 }
+
 body {
   justify-content: center;
   height: 100vh;
