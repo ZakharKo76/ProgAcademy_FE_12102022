@@ -10,40 +10,52 @@ body,
 .red,
 .blue {
   display: flex;
+  align-items: center;
 }
 
+.parent,
+.red,
+.blue,
+.yellow {
+  border-style: ridge;
+  border-width: 8px;
+  background-color: transparent;
+  box-shadow: 3px 3px 3px grey, inset 3px 3px 3px grey ;
+}
+
+.parent,
+.blue {
+  flex-direction: column;
+}
+
+.red,
+.blue {
+  justify-content: space-evenly;
+}
 body {
   justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
 .parent {
   height: 95vh;
   width: 95%;
-  border: 6px solid lawngreen;
+  border-color: lawngreen;
   justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
 }
 
 .red {
-  border: 6px solid red;
+  border-color: red;
   width: 98%;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 .blue {
-  border: 6px solid deepskyblue;
+  border-color: deepskyblue;
   height: 85%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 .yellow {
-  border: 6px solid gold;
+  border-color: gold;
   width: 95%;
 }
 
