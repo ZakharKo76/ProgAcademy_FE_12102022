@@ -121,6 +121,9 @@ body {
 }
 
 .scroll__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(79, 149, 203, 0.6);
   height: 100%;
   width: 49%;
@@ -129,6 +132,15 @@ body {
   font-weight: bold;
   color: ivory;
   transition: all 0.4s ease-in-out;
+}
+
+.fa-solid {
+  display: block;
+}
+
+.fa-hand-back-point-left,
+.fa-hand-back-point-right {
+  color: ivory;
 }
 
 .dots__dot:hover {
@@ -232,16 +244,17 @@ body {
     padding: 0 5px;
   }
   .banner__dots {
+    margin-top: 12px;
     left: calc(50% - 17.5vh);
   }
   .banner__scroll {
     right: calc(50% - 7.5vw);
     bottom: 10px;
-    width: 15vw;
+    width: 17vw;
     height: 12vw;
   }
   .scroll__button {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
 
@@ -272,13 +285,13 @@ body {
     top: 83vh;
   }
   .banner__scroll {
-    right: calc(50% - 7.5vw);
+    right: calc(50% - 15vw);
     bottom: 10px;
-    width: 15vw;
-    height: 12vw;
+    width: 30vw;
+    height: 16vw;
   }
   .scroll__button {
-    font-size: 10vw;
+    font-size: 12vw;
   }
 }
 
@@ -347,12 +360,12 @@ body {
     top: 75vh;
   }
   .banner__scroll {
-    right: calc(50% - 7.5vw);
+    right: calc(50% - 10vw);
     bottom: 7vh;
-    width: 15vw;
+    width: 20vw;
     height: 12vw;
   }
   .scroll__button {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
