@@ -1,0 +1,196 @@
+:root {
+  --field-width: 64%;
+  --field-short-width: 32%;
+  --field-radio-width: 55%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+  color: red;
+}
+
+.form1,
+.form1__header,
+.form1__body,
+.form1__item,
+.form1__footer,
+.form1__itemWeb,
+.itemRadio {
+  display: flex;
+}
+
+label,
+.form1__footer input {
+  cursor: pointer;
+}
+
+.form1__header,
+.form1__header select {
+  background: darkseagreen;
+}
+
+.form1__header h3,
+.form1__header select,
+.form1__itemText,
+.form1__footer input,
+.form1__itemWeb {
+  text-transform: capitalize;
+}
+
+.form1 {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  border: 1px solid green;
+}
+
+.form1__header {
+  align-items: center;
+  height: 8%;
+  border-bottom: 1px solid green;
+}
+
+.form1__footer {
+ border-top: 1px solid darkturquoise;
+}
+
+.form1__header h3 {
+  margin: 0 15px;
+  font-size: 20px;
+  text-shadow: 0 0 5px white;
+}
+
+.form1__header select {
+  border: none;
+  margin: 0 13%;
+  padding: 5px 8px;
+  text-shadow: 0 0 5px white;
+}
+
+.form1__header select:focus {
+  outline: none;
+  box-shadow: 0 0 10px black;
+  background: ivory;
+  border-radius: 5px;
+  color: green;
+}
+
+.form1__body {
+  justify-content: space-between;
+}
+.form1__body > div:first-child {
+  width: 45%;
+}
+
+.form1__body > div:last-child {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form1__item {
+  justify-content: space-between;
+  margin: 25px 0 25px 15px;
+}
+
+.form1__item input[type="text"],
+.form1__item input[type="tel"],
+.form1__item input[type="email"],
+.form1__item select {
+  width: var(--field-width);
+}
+
+#homePhone,
+#faxNumber {
+  width: var(--field-short-width);
+  margin-right: var(--field-short-width);
+}
+
+.form1__itemText,
+.form1__itemRadio {
+  font-weight: 700;
+}
+
+.form1__textArea {
+  height: 12vh;
+  width: var(--field-width);
+  resize: none;
+}
+
+.form1__footer {
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  height: 8%;
+}
+.form1__footer input {
+  padding: 6px 33px;
+  margin: 0 4px;
+  border-radius: 2px;
+  background-color: darkseagreen;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+}
+
+.form1__itemWeb {
+  flex-direction: column;
+  width: var(--field-width);
+}
+
+.itemWeb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.itemWeb:first-child {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.form1__itemWeb input {
+  width: var(--field-width);
+  font-weight: bold;
+}
+
+.form1__itemRadio {
+  width: var(--field-radio-width);
+}
+
+.form1__itemRadio::first-letter {
+  text-transform: uppercase;
+}
+
+.form1__item input[type="radio"] {
+  margin-right: 15px;
+}
+
+.form1__item .radiospan {
+  text-transform: capitalize;
+  color: black;
+  font-size: 0.9em;
+}
+
+.radioLabel {
+  width: var(--field-width);
+}
+
+.itemRadio {
+  flex-direction: column;
+  width: var(--field-short-width);
+  margin-right: 25px;
+}
+
+#message {
+  width: var(--field-width);
+  margin-right: 25px;
+  height: 25vh;
+}
