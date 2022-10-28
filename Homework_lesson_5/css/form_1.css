@@ -1,0 +1,82 @@
+* {
+  /* border: 0; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+}
+
+.signup__form,
+.signup__header,
+.signup__item,
+.signup__item input,
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.signup__form {
+  display: flex;
+  width: 450px;
+  height: 450px;
+  margin: calc(50vh - 225px) auto;
+  justify-content: space-around;
+}
+
+.signup__header {
+	margin-top: 5px;
+  text-align: center;
+  font-size: 25px;
+}
+.signup__header h2 {
+  letter-spacing: -3px;
+  padding: 5px;
+}
+
+.signup__header h2::first-letter,
+.signup__item label::first-letter {
+  text-transform: uppercase;
+}
+
+.signup__item {
+  margin: 0 20px;
+}
+
+.signup__item label {
+  margin: 10px 0 5px;
+  font-size: smaller;
+  cursor: pointer;
+}
+
+.signup__item input {
+  border-radius: 5px;
+  height: 2rem;
+  border: #d4d4d4 2px solid;
+  padding: 17px 10px;
+}
+
+.signup__item input:focus {
+  outline-color: #abd5f6;
+  box-shadow: 0 0 10px #51a0dd;
+  background-color: #fff;
+}
+
+.signup__submit {
+  margin: 10px 20px 20px;
+}
+
+.signup__submit input {
+  border: none;
+  padding: 12px 15px;
+  border-radius: 7px;
+  background-image: linear-gradient(180deg, #2594cfe4, #0046cc);
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
