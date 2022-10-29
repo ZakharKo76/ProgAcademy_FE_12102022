@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM_4</title>
+    <link rel="stylesheet" href="css/form_4.css" />
+    <link
+      rel="stylesheet"
+      href="../Homework_lesson_3/lib/fontawesome-free-6.2.0-web/css/all.css"
+    />
+  </head>
+  <body>
+    <form action="script.js" class="formfourth">
+      <div class="formfourth__header"><p>login form</p></div>
+      <div class="formfourth__row">
+        <div class="row__item">
+          <label for="email">e-mail</label>
+        </div>
+        <div class="row__input">
+          <input type="email" id="email" />
+          <span><i class="fa-solid fa-user"></i></span>
+        </div>
+      </div>
+      <div class="formfourth__row">
+        <div class="row__item">
+          <label for="password">password</label>
+        </div>
+        <div class="row__input">
+          <input type="password" id="password" />
+          <span><i class="fa-solid fa-lock"></i></span>
+        </div>
+      </div>
+      <!-- third block -->
+      <div class="formfourth__row">
+        <div class="row__item"></div>
+        <div class="row__ancher">
+			<a href="#">forgot password</a>
+          <label for="checkbox"> keep me logged in<input type="checkbox" id="checkbox"></label>
+        </div>
+      </div>
+      <!-- footer  -->
+      <div class="formfourth__footer">
+        <input type="button" class="footer__button" value="Register" />
+        <input type="submit" class="footer__button" value="Log in" />
+      </div>
+    </form>
+  </body>
+</html>

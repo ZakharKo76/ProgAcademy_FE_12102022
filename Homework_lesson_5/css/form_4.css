@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+.formfourth__header,
+.formfourth__footer,
+.formfourth__row,
+.formfourth,
+.row__item,
+.row__input,
+.row__ancher {
+  display: flex;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+
+.formfourth {
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  height: 60%;
+  width: 35%;
+  background-color: #fff;
+  border: 45px solid;
+  border-image: linear-gradient(15deg, #6fd3d1, #279b84) 1;
+}
+
+.formfourth__header {
+  border-bottom: 1px solid #d0dadb;
+  height: 20%;
+}
+
+.formfourth__footer {
+  height: 20%;
+  border-top: 1px solid #d0dadb;
+  justify-content: flex-end;
+}
+
+.formfourth__header,
+.formfourth__footer {
+  background-color: #e4eeef;
+  align-items: center;
+}
+
+.formfourth__header p {
+  margin-left: 7%;
+  font-size: 18px;
+}
+
+.formfourth__header p::first-letter,
+.row__item label::first-letter,
+.formfourth__row a::first-letter,
+.row__ancher label::first-letter {
+  text-transform: uppercase;
+}
+
+.footer__button {
+  color: white;
+  font-size: 12px;
+  padding: 10px 25px;
+  margin-right: 20px;
+}
+
+.footer__button:first-child {
+  background-color: #bfc1c0;
+}
+
+.footer__button:last-child {
+  background-color: #54b5e0;
+}
+
+.formfourth__row {
+  height: 20%;
+}
+
+.row__item {
+  width: 38%;
+  align-items: center;
+  color: #6a6869;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 30px;
+}
+
+.row__item label,
+.row__ancher label {
+  cursor: pointer;
+}
+
+.row__input {
+  width: 62%;
+  margin-right: 30px;
+  align-items: center;
+  position: relative;
+}
+
+.row__input:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 45%;
+  width: 1px;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e7e5e8;
+}
+
+span {
+  position: absolute;
+  right: 5%;
+  color: #cacaca;
+  font-size: 1.2rem;
+}
+
+.row__input input {
+  border: #e7e5e8 2px solid;
+  width: 100%;
+  height: 60%;
+  padding: 5px 15% 5px 5px;
+}
+
+.row__ancher {
+  width: 62%;
+  margin-right: 30px;
+  flex-direction: column;
+}
+
+.row__ancher a,
+.row__ancher label {
+  display: block;
+}
+
+.row__ancher a {
+  font-size: 0.8em;
+  margin-bottom: 2%;
+  margin-top: -2%;
+}
+
+.row__ancher label {
+  height: 50%;
+  margin-left: 20px;
+}
+
+.row__ancher label input {
+  visibility: hidden;
+}
