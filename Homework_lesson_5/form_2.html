@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM_2</title>
+    <link rel="stylesheet" href="css/form_2.css" />
+  </head>
+  <body>
+    <form action="script.js" class="formsecond">
+      <!-- name -->
+      <div class="formsecond__row">
+        <div class="row__item"><label for="name">Твое имя</label></div>
+        <input type="text" id="name" />
+      </div>
+      <!-- email -->
+      <div class="formsecond__row">
+        <div class="row__item"><label for="email">Твой email</label></div>
+        <input type="email" id="email" />
+      </div>
+      <!-- topic -->
+      <div class="formsecond__row">
+        <div class="row__item"><label for="topic">Тема сообщения</label></div>
+        <input list="list" id="topic" />
+        <datalist id="list">
+          <option value="Слава Україні"></option>
+          <option value="Героям Слава"></option>
+          <option value="Слава Нації"></option>
+          <option value="Смерть ворогам"></option>
+        </datalist>
+      </div>
+      <!-- textarea -->
+      <div class="formsecond__row">
+        <div class="row__item"><label for="textarea">Текст *</label></div>
+        <textarea name="textarea" id="textarea" cols="40" rows="7"></textarea>
+        <!-- <input type="text" id="textarea" /> -->
+      </div>
+      <!-- captcha -->
+      <div class="formsecond__row">
+        <div class="row__item">
+          <label for="captcha">Защита от спама *</label>
+        </div>
+        <div class="captcha"><input type="text" id="captcha" /></div>
+        <div class="captcha__img">
+          <input type="image" src="img/capcha.jpg" disabled />
+          <p>сменить картинку</p>
+        </div>
+      </div>
+      <!-- submit -->
+      <div class="formsecond__row">
+        <div class="row__item"><label></label></div>
+        <input type="submit" value="отправить" />
+      </div>
+    </form>
+  </body>
+</html>
