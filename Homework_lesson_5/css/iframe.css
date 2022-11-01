@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+body,
+.menu,
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  width: 5vw;
+  flex-direction: column;
+  position: relative;
+  background-color: rgb(187, 168, 224);
+}
+
+.form {
+  border-right: 1px solid #fff;
+  height: 19.9%;
+  margin-left: 15%;
+  align-items: center;
+  border-radius: 20px 0 0 20px;
+  border-width: 2px;
+  background-color: #000;
+  transition: all 0.1s linear;
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+
+.form label {
+  transform: rotate(180deg);
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  padding: 60% 30%;
+  writing-mode: vertical-rl;
+}
+
+.form a {
+  appearance: unset;
+}
+
+input[type="radio"] {
+  appearance: unset;
+}
+
+input:checked + .form {
+  border-right: 1px solid #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px #fff;
+}
+
+iframe {
+  display: block;
+  height: 100vh;
+  width: 95vw;
+  overflow: hidden;
+}

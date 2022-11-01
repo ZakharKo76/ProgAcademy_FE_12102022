@@ -1,187 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form 1</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMS</title>
+    <link rel="stylesheet" href="css/iframe.css" />
   </head>
   <body>
-    <header></header>
-    <form action="script.js" class="form1">
-      <div class="form1__header">
-        <h3>contact manager</h3>
-        <select name="moreActions">
-          <option value="" selected>more actions</option>
-        </select>
+    <nav class="menu">
+      <input type="radio" name="radio" id="radio__1" value="1" checked />
+      <div class="form first">
+        <label for="radio__1">FORM 1</label>
       </div>
-      <div class="form1__body">
-        <div class="form1__left">
-          <!-- first name -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="firstName">first name</label> <span>*</span>
-            </div>
-            <input type="text" id="firstName">
-          </div>
-          <!-- last name -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="lastName">last name</label> <span>*</span>
-            </div>
-            <input type="text" id="lastName">
-          </div>
-          <!-- address -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="address">address</label>
-            </div>
-            <textarea
-              name="address"
-              id="address"
-              rows="5"
-              class="form1__textArea"
-              maxlength="150"
-            ></textarea>
-          </div>
-          <!-- city -->
-          <div class="form1__item">
-            <div class="form1__itemText"><label for="city">city</label></div>
-            <input type="text" id="city">
-          </div>
-          <!-- state -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="state">state</label>
-            </div>
-            <select name="state" id="state">
-              <optgroup label="-Selection-">
-                <option selected>- Select -</option>
-                <option value="slava">Slava Ukraini</option>
-              </optgroup>
-            </select>
-          </div>
-          <!-- home phone -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="homePhone">home phone</label>
-            </div>
-            <input type="tel" id="homePhone" maxlength="13" minlength="9">
-          </div>
-          <!-- work phone -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="workPhone">work phone</label><span> *</span>
-            </div>
-            <input type="tel" id="workPhone" maxlength="13" minlength="9">
-          </div>
-          <!-- fax number -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="faxNumber">fax number</label>
-            </div>
-            <input type="tel" id="faxNumber" maxlength="13" minlength="9">
-          </div>
-          <!-- web site -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="email">email address<span> *</span></label>
-            </div>
-            <div class="form1__itemWeb">
-              <div class="itemWeb">
-                url
-                <input type="url">
-              </div>
-              <div class="itemWeb">
-                link name
-                <input type="url">
-              </div>
-            </div>
-          </div>
-          <!-- email address -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="email">email address</label>
-            </div>
-            <input type="email" id="email">
-          </div>
-        </div>
+      <input type="radio" name="radio" id="radio__2" value="2" />
+      <div class="form second">
+        <label for="radio__2">FORM 2</label>
+      </div>
+      <input type="radio" name="radio" id="radio__3" value="3" />
+      <div class="form third">
+        <label for="radio__3">FORM 3</label>
+      </div>
+      <input type="radio" name="radio" id="radio__4" value="4" />
+      <div class="form fourth">
+        <label for="radio__4">FORM 4</label>
+      </div>
+      <input type="radio" name="radio" id="radio__5" value="5" />
+      <div class="form fifth">
+        <label for="radio__5">FORM 5</label>
+      </div>
+    </nav>
+    <iframe src="form.html" frameborder="0" name="frame" id="frame"></iframe>
+    <script>
+      const frame = document.getElementById("frame");
+      const radios = document.getElementsByName("radio");
+      const links = [
+        "form.html",
+        "form_1.html",
+        "form_2.html",
+        "form_3.html",
+        "form_4.html",
+      ];
 
-        <!-- right part -->
-
-        <div class="form1__right">
-          <!-- contact time -->
-          <div class="form1__item">
-            <div class="form1__itemRadio">
-              when is the best time to contact you
-            </div>
-            <div class="itemRadio">
-              <label class="radioLabel"
-                ><input type="radio" name="time" value="morning"><span
-                  class="radiospan"
-                  >morning</span
-                ></label
-              >
-              <label class="radioLabel"
-                ><input type="radio" name="time" value="afternoon"><span
-                  class="radiospan"
-                  >afternoon</span
-                ></label
-              >
-              <label class="radioLabel"
-                ><input type="radio" name="time" value="evening"><span
-                  class="radiospan"
-                  >evening</span
-                ></label
-              >
-            </div>
-          </div>
-          <!-- contact numbers -->
-          <div class="form1__item">
-            <div class="form1__itemRadio">
-              when is the best time to contact you
-            </div>
-            <div class="itemRadio">
-              <label class="radioLabel"
-                ><input type="radio" name="channel" value="phone"><span
-                  class="radiospan"
-                  >phone</span
-                ></label
-              >
-              <label class="radioLabel"
-                ><input type="radio" name="channel" value="email"><span
-                  class="radiospan"
-                  >email</span
-                ></label
-              >
-              <label class="radioLabel"
-                ><input type="radio" name="channel" value="fax"><span
-                  class="radiospan"
-                  >fax</span
-                ></label
-              >
-            </div>
-          </div>
-          <!-- message -->
-          <div class="form1__item">
-            <div class="form1__itemText">
-              <label for="message">message</label>
-            </div>
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              class="form1__textArea"
-            ></textarea>
-            <!-- <input type="text" class="form1__textArea" id="address"> -->
-          </div>
-        </div>
-      </div>
-      <div class="form1__footer">
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-      </div>
-    </form>
+      radios.forEach((radio) => {
+        radio.addEventListener("click", () => {
+          radio.checked = true;
+          frame.src = links[radio.value - 1];
+        });
+      });
+    </script>
   </body>
 </html>
