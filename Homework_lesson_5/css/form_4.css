@@ -117,10 +117,13 @@ body {
 }
 
 span {
+  display: block;
   position: absolute;
   right: 5%;
+  margin-bottom: 1%;
   color: #cacaca;
-  font-size: 1.2rem;
+  height: 16px;
+  width: 16px;
 }
 
 .row__input input {
@@ -134,7 +137,6 @@ span {
   width: 62%;
   margin-right: 30px;
   flex-direction: column;
-  /* position: relative; */
 }
 
 .row__ancher a,
