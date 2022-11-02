@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="css/form_1.css" />
   </head>
   <body>
-    <div >
-      <form action="script.js" name="signup" class="signup__form">
+    <div>
+      <form
+        action="https://jsonplaceholder.typicode.com/posts"
+        name="signup"
+        class="signup__form"
+      >
         <div class="signup__header">
           <h2>sign up</h2>
         </div>
@@ -30,13 +34,13 @@
         </div>
         <!-- confirmation -->
         <div class="signup__item">
-			<label for="confirm">confirmation</label>
+          <label for="confirm">confirmation</label>
           <input type="password" id="confirm" />
-		  </div>
-		  <!-- submit -->
+        </div>
+        <!-- submit -->
         <div class="signup__submit">
-			<input type="submit" value="Create my account" />
-		  </div>
+          <input type="submit" value="Create my account" formtarget="_blank" />
+        </div>
       </form>
     </div>
   </body>
