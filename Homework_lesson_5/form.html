@@ -9,7 +9,12 @@
   </head>
   <body>
     <header></header>
-    <form action="https://postman-echo.com/post" class="form1" target="_blank">
+    <form
+      action="https://jsonplaceholder.typicode.com/posts"
+      class="form1"
+      target="_blank"
+      method="get"
+    >
       <div class="form1__header">
         <h3>contact manager</h3>
         <select name="moreActions">
@@ -23,14 +28,14 @@
             <div class="form1__itemText">
               <label for="firstName">first name</label> <span>*</span>
             </div>
-            <input type="text" id="firstName" />
+            <input type="text" id="firstName" required />
           </div>
           <!-- last name -->
           <div class="form1__item">
             <div class="form1__itemText">
               <label for="lastName">last name</label> <span>*</span>
             </div>
-            <input type="text" id="lastName" />
+            <input type="text" id="lastName" required />
           </div>
           <!-- address -->
           <div class="form1__item">
@@ -74,7 +79,16 @@
             <div class="form1__itemText">
               <label for="workPhone">work phone</label><span> *</span>
             </div>
-            <input type="tel" id="workPhone" maxlength="13" minlength="9" />
+            <input
+              type="tel"
+              id="workPhone"
+              maxlength="17"
+              minlength="12"
+              -pattern="^\+?(380)-?[0-9]{2}-?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+              placeholder="+380-__-___-__-__"
+              title="+380-__-___-__-__"
+              required
+            />
           </div>
           <!-- fax number -->
           <div class="form1__item">

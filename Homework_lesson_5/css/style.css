@@ -18,6 +18,13 @@ span {
   color: red;
 }
 
+::placeholder {
+  padding: 0 5px;
+  letter-spacing: 2px;
+  color: #666;
+  font-size: 0.8em;
+}
+
 .form1,
 .form1__header,
 .form1__body,
@@ -102,6 +109,14 @@ label,
 .form1__item {
   justify-content: space-between;
   margin: 25px 0 25px 15px;
+}
+
+.form1__item input:focus,
+.form1__textArea:focus {
+  outline: 1px solid green;
+  outline-offset: 1px;
+  border-color: transparent;
+  box-shadow: 0 0 10px lightgreen, inset 0 0 2px lightgreen;
 }
 
 .form1__item input[type="text"],
