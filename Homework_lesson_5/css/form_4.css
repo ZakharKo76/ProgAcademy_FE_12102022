@@ -203,6 +203,14 @@ body {
   border: #30a2e8 2px solid;
 }
 
+#checkbox:focus + label::before {
+  box-shadow: 0 0 5px #30a2e8;
+}
+
+#checkbox:focus + label {
+  text-shadow: 0 0 3px #30a2e8;
+}
+
 #checkbox:checked + label {
   font-weight: 700;
   letter-spacing: 1px;
