@@ -27,14 +27,20 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 label {
   cursor: pointer;
 }
+
+.formsecond__row {
+  align-items: flex-start;
+  gap: 10px;
+}
+
 .formsecond__row .row__item {
-  width: 30%;
+  min-width: 30%;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-right: 10px;
   font-family: Helvetica, sans-serif;
 }
 
@@ -42,15 +48,29 @@ label {
 .formsecond__row textarea {
   height: 100%;
   border: #96b9ff 2px solid;
-  outline: #96b9ff;
   resize: none;
 }
 
-.formsecond__row {
-  align-items: flex-start;
+.formsecond__row input:focus,
+.formsecond__row textarea:focus {
+  border: unset;
+  padding: 1px 0 1px 3px;
+  outline-width: 2px;
+  outline-color: #245fd6;
+  outline-offset: 2px;
+}
+
+.formsecond__row input {
+  width: 35%;
+}
+
+.formsecond__row textarea,
+.formsecond__row .captcha {
+  min-width: 65%;
 }
 
 .formsecond__row input[type="submit"] {
+  width: auto;
   border: black 2px solid;
   padding: 3px 10px;
   border-radius: 5px;
@@ -58,29 +78,23 @@ label {
 }
 
 #captcha {
-  /* display: block; */
-  width: 75%;
-  /* margin-right: 15px; */
-}
-
-.captcha {
-  width: 100px;
+  margin-right: 1em;
+  width: 15%;
 }
 
 .captcha__img {
   display: flex;
-  /* justify-content: space-around; */
   align-items: flex-start;
 }
 
-.captcha__img p {
-  text-decoration: underline;
-  margin-left: 5px;
+.captcha__img a {
+  color: currentColor;
+  margin-left: 1em;
 }
 
 .formsecond__row input[type="image"] {
   height: 80px;
   width: 45%;
   border: none;
-  margin-top: -7px;
+  margin-top: -8px;
 }

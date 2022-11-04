@@ -38,7 +38,7 @@
       <!-- textarea -->
       <div class="formsecond__row">
         <div class="row__item"><label for="textarea">Текст *</label></div>
-        <textarea name="textarea" id="textarea" cols="40" rows="7"></textarea>
+        <textarea name="textarea" id="textarea" rows="7"></textarea>
         <!-- <input type="text" id="textarea" /> -->
       </div>
       <!-- captcha -->
@@ -46,10 +46,12 @@
         <div class="row__item">
           <label for="captcha">Защита от спама *</label>
         </div>
-        <div class="captcha"><input type="text" id="captcha" /></div>
-        <div class="captcha__img">
-          <input type="image" src="img/capcha.jpg" disabled />
-          <p>сменить картинку</p>
+        <div class="captcha">
+          <input type="text" id="captcha" />
+          <div class="captcha__img">
+            <input type="image" src="img/capcha.jpg" disabled />
+            <a href="#">сменить картинку</a>
+          </div>
         </div>
       </div>
       <!-- submit -->
