@@ -116,14 +116,14 @@ body {
   background-color: #e7e5e8;
 }
 
-span {
+.icon {
   display: block;
   position: absolute;
-  right: 5%;
+  right: 4%;
   margin-bottom: 1%;
-  color: #cacaca;
-  height: 16px;
-  width: 16px;
+  fill: #cacaca;
+  width: 1.25em;
+  z-index: 1;
 }
 
 .row__input input {
