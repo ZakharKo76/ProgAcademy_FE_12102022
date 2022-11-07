@@ -1,0 +1,41 @@
+.container {
+  width: 70%;
+  height: 500px;
+  transform: translate(-50%, 10%);
+  position: relative;
+  left: 50%;
+}
+
+.container__item {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid rgb(235, 229, 229);
+  width: 30%;
+  height: 100%;
+  margin-right: -130px;
+  transition: all 1s ease-in-out;
+}
+
+.first {
+  background-image: url("https://source.unsplash.com/daily");
+}
+
+.second {
+  background-image: url("https://source.unsplash.com/random");
+}
+
+.third {
+  background-image: url("https://source.unsplash.com/weekly");
+}
+
+.container__item:hover {
+  position: relative;
+  translate: 50px, 50px;
+  scale: 1.1;
+  transform: skew(-5deg);
+  cursor: pointer;
+  margin: 10px -40px;
+  width: 40%;
+  background-size: 100% 100%;
+  border: 5px double goldenrod;
+}

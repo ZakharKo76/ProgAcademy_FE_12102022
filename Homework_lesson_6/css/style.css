@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nothing You Could Do", cursive;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.way__header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  line-height: 80px;
+  padding-top: 15px;
+  font-size: 2em;
+  top: 5%;
+  background-color: rgba(255, 255, 255, 0.35);
+  z-index: 1;
+}
+
+.way__header,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+.way__header::first-letter {
+  font-size: 1.5em;
+}
+
+main,
+.way__item,
+footer,
+.footer__left,
+.footer__right {
+  display: flex;
+}
+
+main {
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3.5%;
+  height: 65%;
+  background-image: url("../img/ales-krivec-UzHQOxVxqgw-unsplash.jpg");
+  background-size: 100%;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+.way__item {
+  /* transform: skewX(10deg); */
+  flex-direction: column;
+  gap: 7%;
+  justify-content: flex-end;
+  flex: 0 0 25%;
+  height: 55%;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  margin-bottom: 2%;
+  background-color: rgba(50, 50, 50, 0.5);
+  color: ivory;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.way__item > h3 {
+  text-align: right;
+}
+
+.way__item p,
+.footer__left p {
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align-last: right;
+}
+
+.way__item p {
+  font-size: 0.6em;
+  line-height: 1.7em;
+}
+
+footer {
+  height: 35%;
+  gap: 5%;
+}
+
+.footer__left {
+  flex-direction: column;
+  justify-content: center;
+  gap: 7%;
+  flex: 1.5 0 0;
+  background-color: #fff;
+  padding: 25px 0 25px 200px;
+}
+
+.footer__left p {
+  font-size: 0.8em;
+  width: 79%;
+}
+
+.footer__right {
+  width: 60%;
+  flex: 1 0 0;
+  flex-direction: column;
+  padding-top: calc(25px + 0.5em);
+  color: rgb(150, 135, 106);
+}
+
+.footer__right ul {
+  list-style: none;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25%;
+}
+
+.footer__right ul li {
+  /* display: block; */
+  position: relative;
+}
+
+.footer__right ul li,
+.footer__right ul li a {
+  user-select: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  height: 1.5em;
+  padding-right: 15px;
+  fill: currentColor;
+}
+
+.footer__right ul li .icon {
+  box-sizing: content-box;
+  width: 25px;
+  height: 25px;
+  padding: 7px;
+  position: absolute;
+  left: -50px;
+  top: -15px;
+  border-radius: 50%;
+  background-color: rgb(150, 135, 106);
+  stroke: #fff;
+  stroke-width: 25px;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.footer__right ul li .icon:hover {
+  background-color: white;
+  border: rgb(150, 135, 106) solid 2px;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.footer__right ul li:hover,
+.social__media:focus {
+  text-decoration: overline;
+  outline: none;
+  text-shadow: 0 0 1px rgb(150, 135, 106);
+}
+
+.footer__right ul li:first-child,
+.footer__right ul li:first-child:hover {
+  text-decoration: none;
+  text-shadow: none;
+  margin-bottom: 15px;
+  cursor: unset;
+}
