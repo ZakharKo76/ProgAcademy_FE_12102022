@@ -52,7 +52,6 @@ main {
 }
 
 .way__item {
-  /* transform: skewX(10deg); */
   flex-direction: column;
   gap: 7%;
   justify-content: flex-end;
@@ -118,7 +117,6 @@ footer {
 }
 
 .footer__right ul li {
-  /* display: block; */
   position: relative;
 }
 
