@@ -63,6 +63,19 @@ main {
   color: ivory;
   border-radius: 10px;
   padding: 30px;
+  transform: scale(0.1);
+}
+
+.first {
+  animation: leftItemMove 3s linear both;
+}
+
+.second {
+  animation: centerItemMove 3s linear both;
+}
+
+.third {
+  animation: rightItemMove 3s linear both;
 }
 
 .way__item > h3 {
@@ -170,4 +183,56 @@ footer {
   text-shadow: none;
   margin-bottom: 15px;
   cursor: unset;
+}
+
+@keyframes leftItemMove {
+  0% {
+    transform: matrix(0.1, 0, 0, 0.1, 0, 0);
+  }
+  25% {
+    transform: matrix(0.25, 0, 0, 0.25, 500, 0);
+  }
+  50% {
+    transform: matrix(0.5, 0, 0, 0.5, 1000, 0);
+  }
+  75% {
+    transform: matrix(0.75, 0, 0, 0.75, 500, 0);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+@keyframes rightItemMove {
+  0% {
+    transform: matrix(0.1, 0, 0, 0.1, 0, 0);
+  }
+  25% {
+    transform: matrix(0.25, 0, 0, 0.25, -500, 0);
+  }
+  50% {
+    transform: matrix(0.5, 0, 0, 0.5, -1000, 0);
+  }
+  75% {
+    transform: matrix(0.75, 0, 0, 0.75, -500, 0);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+@keyframes centerItemMove {
+  0% {
+    transform: matrix(0.1, 0, 0, 0.1, 0, 0);
+  }
+  25% {
+    transform: matrix(0.25, 0, 0, 0.25, 0, 0);
+  }
+  50% {
+    transform: matrix(0.5, 0, 0, 0.5, 0, 0);
+  }
+  75% {
+    transform: matrix(0.75, 0, 0, 0.75, 0, 0);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
 }
