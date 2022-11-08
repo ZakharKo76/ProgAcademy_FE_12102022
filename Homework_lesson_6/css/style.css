@@ -14,14 +14,19 @@ body {
   position: fixed;
   width: 100%;
   text-align: center;
-  line-height: 80px;
-  padding-top: 15px;
-  font-size: 2em;
+  line-height: 10vh;
+  padding-top: 1.5vh;
+  font-size: 5vh;
   top: 5%;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 1);
   z-index: 1;
+  transform: scaleX(0.01);
 }
+.head__span {
+  opacity: 0;
 
+  animation: headSpan 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 3s both;
+}
 .way__header,
 h2,
 h3 {
@@ -62,8 +67,12 @@ main {
   background-color: rgba(50, 50, 50, 0.5);
   color: ivory;
   border-radius: 10px;
-  padding: 30px;
+  padding: 2% 2.5%;
   transform: scale(0.1);
+}
+
+.way__header {
+  animation: animHeader 3s linear both;
 }
 
 .first {
@@ -90,8 +99,8 @@ main {
 }
 
 .way__item p {
-  font-size: 0.6em;
-  line-height: 1.7em;
+  font-size: 1.5vh;
+  line-height: 2vh;
 }
 
 footer {
@@ -161,13 +170,14 @@ footer {
   background-color: rgb(150, 135, 106);
   stroke: #fff;
   stroke-width: 25px;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.6s linear;
 }
 
 .footer__right ul li .icon:hover {
   background-color: white;
   border: rgb(150, 135, 106) solid 2px;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  stroke: none;
+  transition: all 0.5s ease-in;
 }
 
 .footer__right ul li:hover,
@@ -183,6 +193,29 @@ footer {
   text-shadow: none;
   margin-bottom: 15px;
   cursor: unset;
+}
+
+@keyframes animHeader {
+  0% {
+    transform: scaleX(0.01);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  25% {
+    transform: scaleX(0.25);
+    background-color: rgba(255, 255, 255, 0.84);
+  }
+  50% {
+    transform: scaleX(0.5);
+    background-color: rgba(255, 255, 255, 0.68);
+  }
+  75% {
+    transform: scaleX(0.75);
+    background-color: rgba(255, 255, 255, 0.52);
+  }
+  100% {
+    transform: scaleX(1);
+    background-color: rgba(255, 255, 255, 0.35);
+  }
 }
 
 @keyframes leftItemMove {
@@ -234,5 +267,28 @@ footer {
   }
   100% {
     transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+@keyframes headSpan {
+  0% {
+    transform: scale(3, 0.5);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.33, 1.5);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(2, 0.75);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(0.66, 1.25);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
   }
 }
