@@ -1,5 +1,5 @@
 .navbar.second {
-  margin-top: 70vh;
+  margin-top: 30vh;
   height: 68px;
   max-width: 700px;
   border: none;
@@ -10,6 +10,7 @@
 
 .navbar__left.second {
   width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
 .navbar.second ul {
@@ -21,6 +22,7 @@
   flex: 1 1 auto;
   padding: 23px 0;
   border-right: 1px solid #d4d5d7;
+  text-align: center;
 }
 
 .navbar__left.second li:first-child {
@@ -31,20 +33,94 @@
   flex-grow: 1.7;
 }
 
-.navbar__left.second li {
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-}
-
 .navbar__left.second li a {
   border: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.navbar__left.second li:hover {
-  color: inherit;
+.navbar__left.second li:hover,
+.navbar__left.second li:focus-within {
+  color: #313131;
   background-color: #d7d9d8;
   text-shadow: none;
+  box-shadow: 1px 5px 10px -5px #000;
+}
+
+.navbar__left.second li a:hover,
+.navbar__left.second li a:focus-within,
+.navbar__left.second .navbar__item:hover > a,
+.navbar__left.second .navbar__item:focus-within > a {
+  color: #313131;
+  text-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.fourstripes {
+  position: relative;
+}
+
+.fourstripes {
+  display: inline-block;
+  margin: 0 10px 0 -13px;
+  width: 12px;
+  height: 12px;
+}
+
+.fourstripes span {
+	transition: 0.3s ease-in-out;
+
+}
+
+.fourstripes > span:first-child {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 20%;
+}
+
+.fourstripes > span:nth-child(2) {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 40%;
+}
+
+.fourstripes > span:nth-child(3) {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 60%;
+}
+
+.fourstripes > span:last-child {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 80%;
+}
+
+.navbar__left.second li:hover .fourstripes span:nth-child(2),
+.navbar__left.second li:focus-within .fourstripes span:nth-child(2) {
+  top: calc(20%);
+  transform-origin: left;
+  transform: rotateZ(90deg) scaleX(0.6);
+  transition: 0.3s ease-in-out;
+}
+
+.navbar__left.second li:hover .fourstripes span:nth-child(3),
+.navbar__left.second li:focus-within .fourstripes span:nth-child(3) {
+  top: calc(80%);
+  transform-origin: right;
+  transform: rotateZ(90deg) scaleX(0.6);
+  transition: 0.3s ease-in-out;
 }
