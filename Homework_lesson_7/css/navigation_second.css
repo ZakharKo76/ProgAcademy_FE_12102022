@@ -1,5 +1,7 @@
+/* второе меню на основе стилей для первого меню */
+
 .navbar.second {
-  margin-top: 30vh;
+  margin-top: 15vh;
   height: 68px;
   max-width: 700px;
   border: none;
@@ -69,8 +71,7 @@
 }
 
 .fourstripes span {
-	transition: 0.3s ease-in-out;
-
+  transition: 0.3s ease-in-out;
 }
 
 .fourstripes > span:first-child {

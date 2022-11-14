@@ -1,0 +1,148 @@
+header {
+  display: grid;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10vh;
+}
+
+.menu * {
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul {
+  list-style: none;
+  border-top: 1px solid #d4d6d5;
+  border-bottom: 1px solid #d4d6d5;
+}
+
+.menu > ul {
+  display: flex;
+  justify-content: center;
+}
+
+.menu > ul li {
+  position: relative;
+  border-right: 1px solid #d4d5d7;
+  min-width: max-content;
+}
+
+.menu > ul > li:first-child {
+  border-left: 1px solid #d4d6d5;
+  font-weight: 600;
+}
+
+.menu > ul > li > a:first-child {
+  padding-left: 18px;
+}
+
+.menu > ul > li:last-child {
+  border-right: 1px solid #d4d6d5;
+}
+
+.menu > ul > li > a:last-child {
+  padding-right: 18px;
+}
+
+.menu > ul li a {
+  display: block;
+  background-color: #e2e3e5;
+  color: #313131;
+  padding: 28px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a:focus-within {
+  background-color: #d7d9d8;
+  color: #313131;
+  box-shadow: 1px 5px 10px -5px black;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* sub menu */
+
+.menu li ul {
+  display: none;
+  position: absolute;
+  word-wrap: unset;
+  left: 10%;
+  min-width: 170px;
+}
+
+.menu li > ul li {
+  border: 1px solid #9da0a0;
+}
+
+.menu li > ul li a {
+  padding: 7.5px 10px;
+  text-transform: capitalize;
+  font-weight: normal;
+  background-color: #dedddd;
+}
+
+.menu li > ul li ul {
+  position: absolute;
+  left: 169px;
+  top: 0;
+}
+
+.menu li:hover > ul,
+.menu li:focus-within > ul {
+  display: block;
+  outline: none;
+}
+
+.marker {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  margin-left: 5px;
+  /* border: 1px black solid; */
+  position: relative;
+}
+
+.marker span {
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #313131;
+  transition: 0.3s;
+}
+
+.marker span:nth-child(2) {
+  top: 3px;
+}
+.marker span:nth-child(3) {
+  top: 3px;
+}
+
+.marker span:last-child {
+  top: 6px;
+}
+
+.menu li a:hover > .marker > span:nth-child(1),
+.menu li a:focus-within > .marker > span:nth-child(1),
+.menu li a:hover > .marker > span:nth-child(4),
+.menu li a:focus-within > .marker > span:nth-child(4) {
+  display: none;
+}
+
+.menu li a:hover > .marker > span:nth-child(2),
+.menu li a:focus-within > .marker > span:nth-child(2) {
+  /* transform-origin: left; */
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+
+.menu li a:hover > .marker > span:nth-child(3),
+.menu li a:focus-within > .marker > span:nth-child(3) {
+  /* transform-origin: right; */
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
