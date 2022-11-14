@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MENUs</title>
-	 <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/navigation_first.css" />
-	 <link rel="stylesheet" href="css/navigation_second.css">
-   <link rel="stylesheet" href="css/third_menu.css">
+    <link rel="stylesheet" href="css/navigation_second.css" />
+    <link rel="stylesheet" href="css/third_menu.css" />
   </head>
   <body>
     <!-- первое меню + третье выпадающее меню-->
@@ -17,22 +17,27 @@
         <div class="navbar__left">
           <ul>
             <li class="navbar__item"><a href="#">works</a></li>
-            <li class="navbar__item"><a href="#">authors
-              <div class="threestripes">
-                <span></span><span></span><span></span>
-              </div>
-            </a>
-              
-				    <ul>
-					    <li ><a href="#">образование</a></li>
-					    <li ><a href="#">одежда, обувь</a></li>
-					    <li ><a href="#">офисное</a></li>
-					    <li ><a href="#">покупки, магазин</a></li>
-					    <li ><a href="#">полиграфия</a></li>
-					    <li ><a href="#">праздники</a></li>
-					    <li ><a href="#">природа</a></li>
-				    </ul>
-				</li>
+            <input type="checkbox" checked id="checkbox__first" />
+            <li class="navbar__item">
+              <a href="#"
+                ><label for="checkbox__first">authors </label>
+                <label for="checkbox__first"
+                  ><div class="threestripes">
+                    <span></span><span></span><span></span>
+                  </div>
+                </label>
+              </a>
+
+              <ul>
+                <li><a href="#">образование</a></li>
+                <li><a href="#">одежда, обувь</a></li>
+                <li><a href="#">офисное</a></li>
+                <li><a href="#">покупки, магазин</a></li>
+                <li><a href="#">полиграфия</a></li>
+                <li><a href="#">праздники</a></li>
+                <li><a href="#">природа</a></li>
+              </ul>
+            </li>
             <li class="navbar__item"><a href="#">studios</a></li>
             <li class="navbar__item"><a href="#">schools</a></li>
             <li class="navbar__item"><a href="#">contests</a></li>
@@ -45,7 +50,12 @@
             <li class="navbar__item"><a href="#">login</a></li>
             <li class="navbar__item"><a href="#">register</a></li>
             <li class="navbar__item">
-              <input type="radio" name="radio__language" id="radio__ru" checked/>
+              <input
+                type="radio"
+                name="radio__language"
+                id="radio__ru"
+                checked
+              />
               <label for="radio__ru">ru</label>
             </li>
             <li class="navbar__item">
@@ -56,102 +66,104 @@
         </div>
       </div>
     </nav>
-    
+
     <!-- второе меню -->
-	 <nav class="navigation__second">
+    <nav class="navigation__second">
       <div class="navbar second">
         <div class="navbar__left second">
           <ul>
-            <li class="navbar__item second"><a href="#">home</a>
-				
-				</li>
-            <li class="navbar__item second"><a href="#">website awards</a>
-					<div class="fourstripes">
-						<span></span><span></span><span></span><span></span>
-					</div></li>
+            <li class="navbar__item second"><a href="#">home</a></li>
+            <li class="navbar__item second">
+              <a href="#">website awards</a>
+              <div class="fourstripes">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </li>
             <li class="navbar__item second"><a href="#">nominees</a></li>
-            <li class="navbar__item second"><a href="#">about</a>
-					<div class="fourstripes">
-						<span></span><span></span><span></span><span></span>
-					</div>
-				</li>
+            <li class="navbar__item second">
+              <a href="#">about</a>
+              <div class="fourstripes">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </li>
             <li class="navbar__item second"><a href="#">blog</a></li>
             <li class="navbar__item second"><a href="#">jobs</a></li>
-            <li class="navbar__item second"><a href="#">editorial</a>
-					<div class="fourstripes">
-						<span></span><span></span><span></span><span></span>
-					</div></li>
-				
+            <li class="navbar__item second">
+              <a href="#">editorial</a>
+              <div class="fourstripes">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
-	 </nav>
-
-   <!-- меню с выпадающими подменю, более простая верстка-->
-
-   <header>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li>
-          <a href="#"
-            >website awards
-            <div class="marker">
-              <span></span><span></span><span></span><span></span>
-            </div>
-          </a>
-          <ul>
-            <li><a href="#">oscar</a></li>
-            <li>
-              <a href="#"
-                >golden globe
-                <div class="marker">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-              </a>
-              <ul>
-                <li><a href="#">1990 - 1999</a></li>
-                <li><a href="#">2000 - 2009</a></li>
-                <li><a href="#">2010 - 2019</a></li>
-                <li><a href="#">2020 - present time</a></li>
-              </ul>
-            </li>
-            <li><a href="#">golden eagle</a></li>
-            <li><a href="#">saturn</a></li>
-            <li><a href="#">no awards</a></li>
-          </ul>
-        </li>
-        <li><a href="#">nominees</a></li>
-        <li>
-          <a href="#"
-            >about
-            <div class="marker">
-              <span></span><span></span><span></span><span></span>
-            </div>
-          </a>
-          <ul>
-            <li><a href="#">who we are?</a></li>
-            <li><a href="#">strategy</a></li>
-            <li><a href="#">contacts</a></li>
-          </ul>
-        </li>
-        <li><a href="#">blog</a></li>
-        <li><a href="#">jobs</a></li>
-        <li>
-          <a href="#"
-            >editorial
-            <div class="marker">
-              <span></span><span></span><span></span><span></span>
-            </div>
-          </a>
-          <ul>
-            <li><a href="#">P.Hammer</a></li>
-            <li><a href="#">S.King</a></li>
-            <li><a href="#">T.Shevchenko</a></li>
-          </ul>
-        </li>
-      </ul>
     </nav>
-  </header>
+
+    <!-- меню с выпадающими подменю, более простая верстка-->
+
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li>
+            <a href="#"
+              >website awards
+              <div class="marker">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </a>
+            <ul>
+              <li><a href="#">oscar</a></li>
+              <li>
+                <a href="#"
+                  >golden globe
+                  <div class="marker">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </a>
+                <ul>
+                  <li><a href="#">1990 - 1999</a></li>
+                  <li><a href="#">2000 - 2009</a></li>
+                  <li><a href="#">2010 - 2019</a></li>
+                  <li><a href="#">2020 - present time</a></li>
+                </ul>
+              </li>
+              <li><a href="#">golden eagle</a></li>
+              <li><a href="#">saturn</a></li>
+              <li><a href="#">no awards</a></li>
+            </ul>
+          </li>
+          <li><a href="#">nominees</a></li>
+          <li>
+            <a href="#"
+              >about
+              <div class="marker">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </a>
+            <ul>
+              <li><a href="#">who we are?</a></li>
+              <li><a href="#">strategy</a></li>
+              <li><a href="#">contacts</a></li>
+            </ul>
+          </li>
+          <li><a href="#">blog</a></li>
+          <li><a href="#">jobs</a></li>
+          <li>
+            <a href="#"
+              >editorial
+              <div class="marker">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </a>
+            <ul>
+              <li><a href="#">P.Hammer</a></li>
+              <li><a href="#">S.King</a></li>
+              <li><a href="#">T.Shevchenko</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
   </body>
 </html>

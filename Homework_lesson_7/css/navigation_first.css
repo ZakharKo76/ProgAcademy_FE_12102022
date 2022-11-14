@@ -10,7 +10,8 @@
   transition: 0.4s;
 }
 
-.navbar__item {
+.navbar__item,
+label {
   transition: all 0.5s linear;
   cursor: pointer;
   position: relative;
@@ -31,6 +32,10 @@
 .navbar__left {
   width: 60%;
   justify-content: space-between;
+}
+
+#checkbox__first {
+  display: none;
 }
 
 .navbar__left ul li {
@@ -91,12 +96,16 @@
   /* outline: none; */
 }
 
-.navbar__item:hover > ul,
-.navbar__item:focus-within > ul {
+/* .navbar__item:hover > ul,
+.navbar__item:focus-within > ul, */
+#checkbox__first:checked + li > ul {
   color: #a2a2a2;
   text-shadow: none;
   display: block;
-  /* outline: none; */
+}
+
+#checkbox__first:not(:checked) + li > ul {
+  display: none;
 }
 
 .navbar__left ul li ul li:hover > a,
@@ -197,7 +206,6 @@
   display: inline-block;
   height: 9px;
   width: 18px;
-  /* border: 1px white solid; */
   margin-left: 10px;
 }
 
@@ -222,26 +230,49 @@
 }
 
 .navbar__item:hover > a span,
-.navbar__item:focus-within > a span {
+.navbar__item:focus-within > a span,
+#checkbox__first:checked + li > a span {
   background-color: #bbfe00;
   transition: 0.5s;
 }
 
-.navbar__item:hover > a span:first-child,
-.navbar__item:focus-within > a span:first-child {
+#checkbox__first:checked + li > a label {
+  color: #bbfe00;
+}
+
+/* .navbar__item:hover > a span:first-child, */
+#checkbox__first:not(:checked)
+  + .navbar__item:focus-within
+  > a
+  span:first-child,
+#checkbox__first:not(:checked) + li:hover > a span:first-child {
   transform-origin: left bottom;
   transform: translateY(5px) rotate(45deg) scale(0.7);
 }
 
-.navbar__item:hover > a span:nth-child(2),
-.navbar__item:focus-within > a span:nth-child(2) {
+#checkbox__first:checked + li > a span:first-child {
+  transform: translateY(5px) rotate(45deg);
+}
+
+/* .navbar__item:hover > a span:nth-child(2), */
+.navbar__item:focus-within > a span:nth-child(2),
+#checkbox__first:not(:checked) + li:hover > a span:nth-child(2) {
   transform: translateX(1px) rotate(450deg) scale(1);
 }
 
-.navbar__item:hover > a span:last-child,
-.navbar__item:focus-within > a span:last-child {
+#checkbox__first:checked + li > a span:nth-child(2) {
+  opacity: 0;
+}
+
+/* .navbar__item:hover > a span:last-child, */
+#checkbox__first:not(:checked) + .navbar__item:focus-within > a span:last-child,
+#checkbox__first:not(:checked) + li:hover > a span:last-child {
   transform-origin: right bottom;
   transform: translate(1px, -5px) rotate(-45deg) scale(0.7);
+}
+
+#checkbox__first:checked + li > a span:last-child {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 @keyframes steps {
