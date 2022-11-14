@@ -2,7 +2,7 @@ header {
   display: grid;
   place-content: center;
   font-family: "Roboto", sans-serif;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 .menu * {
@@ -115,15 +115,19 @@ header {
   transition: 0.3s;
 }
 
+.marker span:first-child {
+  top: -3px;
+}
+
 .marker span:nth-child(2) {
-  top: 3px;
+  top: 2px;
 }
 .marker span:nth-child(3) {
-  top: 3px;
+  top: 2px;
 }
 
 .marker span:last-child {
-  top: 6px;
+  top: 7px;
 }
 
 .menu li a:hover > .marker > span:nth-child(1),
