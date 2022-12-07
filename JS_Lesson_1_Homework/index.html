@@ -116,16 +116,16 @@
       alert(
         "Задание 4. Получить от пользователя данные о пользователе: имя, фамилию, возраст. Обработать их и вывести на экран."
       );
-      var userName = isItNotNumber("Имя");
-      var userSurname = isItNotNumber("Фамилия");
+      var userName = isItNotNumber("Имя").split(" ").join(""); //убираем пробелы
+      var userSurname = isItNotNumber("Фамилия").split(" ").join(""); //убираем пробелы
       var userAge = isItNumber("Возраст");
       if (userAge < 0) {
-        userAge = -userAge;
+        userAge = -userAge; //убираем отрицательный возраст
       }
-      if (userName.split(" ").join("") === "") {
+      if (userName === "") {
         userName = "John";
       }
-      if (userSurname.split(" ").join("") === "") {
+      if (userSurname === "") {
         userSurname = "Dow";
       }
 
@@ -135,6 +135,26 @@
         	`);
 
       // Задача №5
+      document.write(
+        "<br><h4>Задание 5. Получение, обработка и вывод данных от пользователя </h4>"
+      );
+      alert(
+        "Задание 5. Запросите у пользователя его возраст, после чего выведите на экран модальное окно с вопросом: 'Ваш возраст ...(введеное пользователем число) лет?'. Далее в зависимости от выбора пользователя выводится модальное окно с информацией true или false."
+      );
+
+      var correctAge = isItNumber("Ваш возраст");
+      if (correctAge < 0) {
+        correctAge = -correctAge;
+      }
+
+      var checkAge = confirm(`Ваш возраст ${correctAge} лет?`);
+
+      alert(checkAge ? "Все верно!" : "Неправда!!!");
+
+      document.write(`Введенный возраст:  ${correctAge} <br>
+        	Ответ в проверке возраста:  ${checkAge} <br>
+      	Результат проверки:  ${checkAge ? "Все верно!" : "Неправда!!!"} <br>
+        	`);
     </script>
   </body>
 </html>
