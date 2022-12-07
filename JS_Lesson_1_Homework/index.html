@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS_HW_Lesson1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // функция проверки ввода числа
+      function isItNumber(element) {
+        var number;
+        do {
+          number = +prompt(`${element}? (только число!):`);
+        } while (!(number > 0 || number < 0));
+        return number;
+      }
+      // функция проверки ввода строки
+      function isItNotNumber(element) {
+        var checking;
+        do {
+          checking = prompt(`${element}? (только непустая строка!):`);
+        } while (
+          +checking > 0 ||
+          +checking < 0 ||
+          checking === null ||
+          checking === ""
+        );
+        return checking;
+      }
+
+      // Задача №1
+      alert(
+        "Задание 1. По координатам двух точек, которые вводит пользователь, определить уравнение прямой, проходящей через эти точки. Общий вид уравнения: y = kx + b; где k = (y1 - y2) / (x1 - x2), b = y2 - k*x2"
+      );
+      document.write("<h4>Задание 1. Уравнение прямой: </h4>");
+      var x1 = isItNumber("X1");
+      var y1 = isItNumber("Y1");
+      var x2 = isItNumber("X2");
+      var y2 = isItNumber("Y2");
+      var k = (y1 - y2) / (x1 - x2);
+      var b = k * x2;
+
+      document.write(
+        `	X1 = ${x1}, Y1 = ${y1} <br>
+              				X2 = ${x2}, Y2 = ${y2} <br>
+              			`
+      );
+
+      if (x1 - x2 !== 0 && b > 0) {
+        document.write(`y = ${k}*x + ${b}` + "<br>");
+      } else if (x1 - x2 !== 0 && b < 0) {
+        document.write(`y = ${k}*x ${b}` + "<br>"); //избегаем записи "+ -число" для отриц. чисел
+      } else {
+        document.write("<p> Решения нет. <br></p>");
+      }
+
+      // Задача №2
+      document.write(
+        "<h4>Задание 2. Обмен переменных с использованием буферной переменной: </h4>"
+      );
+      alert(
+        "Задание 2. Обменять значения двух переменных, используя третью (буферную) переменную."
+      );
+
+      var firstVar = prompt("Первая переменная =");
+      if (firstVar === "") {
+        firstVar = "'' (пустая строка)"; //добавляем наглядности при нажатии "Ок" без ввода значения
+      }
+      var secondVar = prompt("Вторая переменная =");
+      if (secondVar === "") {
+        secondVar = "'' (пустая строка)"; //добавляем наглядности при нажатии "Ок" без ввода значения
+      }
+      document.write(
+        `	первая переменная = ${firstVar} <br>
+              				вторая переменная = ${secondVar} <br>
+              			`
+      );
+      var bufferVar = firstVar;
+      firstVar = secondVar;
+      secondVar = bufferVar;
+      document.write(
+        `	первая переменная = ${firstVar} <br>
+              				вторая переменная = ${secondVar} <br>
+              			`
+      );
+
+      // Задача №3
+      document.write("<h4>Задание 3. Присвоение значений переменных: </h4>");
+
+      alert(
+        "Задание 3. Объявите две переменные: admin и name. Запишите в name строку 'Василий'. Замените значение из name в admin. Выведите admin."
+      );
+
+      var admin,
+        name = "Василий";
+
+      document.write(
+        `	admin = ${admin} <br>
+              				name = ${name} <br>
+              			`
+      );
+
+      admin = name;
+
+      document.write(
+        `	admin = ${admin} <br>
+              			`
+      );
+
+      // Задача №4
+      document.write(
+        "<br><h4>Задание 4. Получение и вывод данных от пользователя </h4>"
+      );
+      alert(
+        "Задание 4. Получить от пользователя данные о пользователе: имя, фамилию, возраст. Обработать их и вывести на экран."
+      );
+      var userName = isItNotNumber("Имя");
+      var userSurname = isItNotNumber("Фамилия");
+      var userAge = isItNumber("Возраст");
+      if (userAge < 0) {
+        userAge = -userAge;
+      }
+      if (userName.split(" ").join("") === "") {
+        userName = "John";
+      }
+      if (userSurname.split(" ").join("") === "") {
+        userSurname = "Dow";
+      }
+
+      document.write(`Имя:  ${userName} <br>
+        	Фамилия:  ${userSurname} <br>
+      	Возраст:  ${userAge} <br>
+        	`);
+
+      // Задача №5
+    </script>
+  </body>
+</html>
