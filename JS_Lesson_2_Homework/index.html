@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS_Homework_2</title>
+  </head>
+  <body>
+    <script>
+      // функция проверки ввода числа
+      function isItNumber(element) {
+        var number;
+        do {
+          number = prompt(`${element}? (только число!):`);
+          if (number === "0") {
+            return +number;
+          }
+        } while (!(+number > 0 || +number < 0));
+        return +number;
+      }
+
+      // функция для вычисления чисел Фибоначчи
+      function fibN(n) {
+        return n <= 1 ? n : fibN(n - 2) + fibN(n - 1);
+      }
+
+      // Task 1
+      alert(
+        '1. Среди трех чисел найти среднее арифметическое. Если среди чисел есть равные, вывести сообщение "Ошибка". Числа принять от пользователя.'
+      );
+      document.write("<h4>Задание 1.</h4>");
+      var firstFigure = isItNumber("Первое число");
+      document.write(`Первое число = ${firstFigure} <br>`);
+      var secondFigure = isItNumber("Второе число");
+      document.write(`Второе число = ${secondFigure} <br>`);
+      var thirdFigure = isItNumber("Третье число");
+      document.write(`Третье число = ${thirdFigure} <br>`);
+      var average = (firstFigure + secondFigure + thirdFigure) / 3;
+
+      if (
+        firstFigure !== secondFigure &&
+        firstFigure !== thirdFigure &&
+        secondFigure !== thirdFigure
+      ) {
+        document.write("Среднее арифметическое = " + average + "<br>");
+      } else {
+        document.write("Ошибка. Есть минимум два одинаковых числа.<br>");
+      }
+
+      // Task 2
+      alert('2. Построить прямоугольный треугольник состоящий из символа "*".');
+      document.write("<h4>Задание 2.</h4>");
+      // получаем длину катета в *
+      var katetStars = isItNumber("Длина катета в '*'");
+      // страхуемся на случай ввода отрицательного значения
+      if (katetStars < 0) {
+        katetStars = -katetStars;
+      }
+      document.write(`Катет = ${katetStars}* <br>`);
+      // строим треугольник
+      var i = 1;
+      while (i <= katetStars) {
+        var j = 1;
+        while (j <= i) {
+          document.write("*");
+          j++;
+        }
+        i++;
+        document.write("<br>");
+      }
+
+      // Task 3
+      alert(
+        "3. Определить какое из трех, введенных пользователем, чисел максимальное и вывести его на экран."
+      );
+      document.write("<h4>Задание 3.</h4>");
+      // устанавливаем счетчик введенных чисел
+      var counter = 1;
+      // инициализируем максимум
+      var maxFigure = isItNumber("Введите первое число");
+      // запускаем ввод чисел
+      var nextFigure = maxFigure;
+      while (counter < 3) {
+        document.write(`${counter}-е число = ${nextFigure} <br>`);
+        nextFigure = isItNumber("Следующее число");
+        if (nextFigure > maxFigure) {
+          maxFigure = nextFigure;
+        }
+        counter++;
+      }
+      document.write(`Максимальное число = ${maxFigure} <br>`);
+
+      // Task 4
+      alert(
+        "4. Дано два числа A и B где (A<B). Выведите на экран суму всех чисел расположенных в числовом промежутке от А до В.Выведите на экран все нечетные значения, расположенные в числовом промежутке от А до В."
+      );
+      document.write("<h4>Задание 4.</h4>");
+      // получаем а и b
+      var lesserFigure = isItNumber("Меньшее число");
+      var biggerFigure = isItNumber("Большее число");
+      var buffer;
+      // переставляем числа если ввели наоборот
+      if (lesserFigure > biggerFigure) {
+        buffer = biggerFigure;
+        biggerFigure = lesserFigure;
+        lesserFigure = buffer;
+      }
+      document.write(`A = ${lesserFigure} <br>`);
+      document.write(`B = ${biggerFigure} <br>`);
+      // получаем суммы
+      var sumAllFigures = 0;
+      while (lesserFigure <= biggerFigure) {
+        sumAllFigures += lesserFigure;
+        if (lesserFigure % 2 === 1 || lesserFigure % 2 === -1) {
+          document.write(`${lesserFigure} <br>`);
+        }
+        lesserFigure++;
+      }
+      document.write(`Сумма всех чисел = ${sumAllFigures} <br>`);
+
+      // Task 5
+      alert(
+        "5.Вывести на экран ряд чисел Фибоначчи, состоящий из n элементов (n принять от пользователя)."
+      );
+      document.write("<h4>Задание 5.</h4>");
+      // принимаем n, делаем неотрицательным и округляем
+      var n = Math.round(isItNumber("Количество чисел Фибоначчи"));
+      if (n < 0) {
+        n = -n;
+      }
+      // выводим числа
+      document.write(`${n} Чисел Фибоначчи:<br>`);
+      var fibCounter = 1;
+      while (fibCounter <= n) {
+        document.write(fibN(fibCounter) + "&nbsp;&nbsp;&nbsp;");
+        fibCounter++;
+      }
+
+      // Task 6
+      alert("6. Вывести на экран таблицу умножения от 0 до 9.");
+      document.write("<h4>Задание 6.</h4>");
+      var start = 1;
+      var second = 1;
+
+      while (start <= 9) {
+        while (second <= 9) {
+          document.write(
+            `${start}*${second}=${start * second} &nbsp;&nbsp;&nbsp;`
+          );
+          second++;
+        }
+        second = 1;
+        start++;
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>
