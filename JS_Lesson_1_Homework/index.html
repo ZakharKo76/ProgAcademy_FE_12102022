@@ -12,9 +12,12 @@
       function isItNumber(element) {
         var number;
         do {
-          number = +prompt(`${element}? (только число!):`);
-        } while (!(number > 0 || number < 0));
-        return number;
+          number = prompt(`${element}? (только число!):`);
+          if (number === "0") {
+            return +number;
+          }
+        } while (!(+number > 0 || +number < 0));
+        return +number;
       }
       // функция проверки ввода строки
       function isItNotNumber(element) {
