@@ -89,14 +89,17 @@
       var maxFigure = isItNumber("Введите первое число");
       // запускаем ввод чисел
       var nextFigure = maxFigure;
-      while (counter < 3) {
+      do {
+        // if (counter === 3) {
+        //   break;
+        // }
         document.write(`${counter}-е число = ${nextFigure} <br>`);
+        counter++;
         nextFigure = isItNumber("Следующее число");
         if (nextFigure > maxFigure) {
           maxFigure = nextFigure;
         }
-        counter++;
-      }
+      } while (counter <= 3);
       document.write(`Максимальное число = ${maxFigure} <br>`);
 
       // Task 4
