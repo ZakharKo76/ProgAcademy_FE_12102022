@@ -21,8 +21,16 @@
       }
 
       // функция для вычисления чисел Фибоначчи
-      function fibN(n) {
-        return n <= 1 ? n : fibN(n - 2) + fibN(n - 1);
+      function fibN(n, memo) {
+        memo = memo || {};
+        console.log("memo: " + memo[n]);
+
+        if (memo[n]) return memo[n];
+
+        if (n <= 1) return 1;
+        memo[n] = fibN(n - 1, memo) + fibN(n - 2, memo);
+        // console.log(memo[n]);
+        return memo[n];
       }
 
       // Task 1
@@ -133,7 +141,12 @@
       document.write(`${n} Чисел Фибоначчи:<br>`);
       var fibCounter = 1;
       while (fibCounter <= n) {
-        document.write(fibN(fibCounter) + "&nbsp;&nbsp;&nbsp;");
+        if (fibCounter % 10 === 0) {
+          document.write("<br>");
+        }
+        document.write(
+          fibCounter + "-е: " + fibN(fibCounter) + "&nbsp;&nbsp;&nbsp;"
+        );
         fibCounter++;
       }
 
