@@ -90,12 +90,12 @@
       // запускаем ввод чисел
       var nextFigure = maxFigure;
       do {
-        // if (counter === 3) {
-        //   break;
-        // }
         document.write(`${counter}-е число = ${nextFigure} <br>`);
+
         counter++;
-        nextFigure = isItNumber("Следующее число");
+        if (counter <= 3) {
+          nextFigure = isItNumber("Следующее число");
+        }
         if (nextFigure > maxFigure) {
           maxFigure = nextFigure;
         }
