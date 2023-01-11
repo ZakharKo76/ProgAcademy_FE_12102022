@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS_HW_3</title>
+  </head>
+  <body>
+    <script>
+      // 1. Создать функцию calculate(operand1, operand2, sign), где operand1 и operand2 — два числа, sign — знак арифметической операции.
+      //  Функция должна расчитывать результат операции, исходя из переданного ей знака.
+      //  Функция должна проверять корректность введенных чисел и знака операции.
+      //  Все аргументы для функции принять от пользователя.
+      const firstNumber = inputNum("первое число");
+      const secondNumber = inputNum("второе число");
+      const sign = inputSign();
+      const result = calcResult(firstNumber, secondNumber, sign);
+
+      alert(firstNumber + sign + secondNumber + "=" + result);
+
+      function inputNum(order) {
+        do {
+          var number = prompt(`Введите ${order}:`);
+          if (number != null) {
+            number = number.split(" ").join("");
+          }
+          console.log(number);
+        } while (
+          Number.isNaN(+number) ||
+          number === undefined ||
+          number === null ||
+          number === ""
+        );
+        return +number;
+      }
+
+      function inputSign() {
+        const arr = ["*", "-", "/", "+"];
+        let sign;
+        do {
+          sign = prompt("Введите знак операции:");
+        } while (arr.indexOf(sign) === -1);
+        return sign;
+      }
+
+      function calcResult(firstNumber, secondNumber, sign) {
+        switch (sign) {
+          case "*":
+            return firstNumber * secondNumber;
+            break;
+          case "-":
+            return firstNumber - secondNumber;
+            break;
+          case "+":
+            return firstNumber + secondNumber;
+            break;
+          case "/":
+            if (secondNumber === 0) {
+              return "∞";
+            } else {
+              return firstNumber / secondNumber;
+            }
+            break;
+        }
+      }
+
+      // 2. Создать функцию, возводящую число в степень, число и сама степень вводится пользователем
+      const base = inputNum("основание степени");
+      const exp = inputNum("показатель степени");
+      alert(`${base} в степени ${exp} = ${Math.pow(base, exp)}`);
+
+      //  3.  Создать игру "Камень-Ножницы-Бумага".
+      let userChoice,
+        computerChoice,
+        scoreCounterUser = 0,
+        scoreCounterComp = 0,
+        currentResult,
+        continueGame;
+      const choiceTable = [1, 2, 3, 3];
+      const itemsTable = ["камень", "ножницы", "бумага", "бумага"];
+
+      function game() {
+        do {
+          userChoice = parseInt(
+            prompt(
+              "КАМЕНЬ-НОЖНИЦЫ-БУМАГА\n\nСделайте свой выбор:\n\n1 - камень\n2 - ножницы\n3 - бумага"
+            )
+          );
+          if (choiceTable.indexOf(userChoice) === -1) {
+            alert("Повторите выбор, что-то не так!");
+          }
+        } while (choiceTable.indexOf(userChoice) === -1);
+        //   выюирает компьютер
+        computerChoice =
+          choiceTable[Math.floor(Math.random() * choiceTable.length)];
+
+        if (computerChoice === 1) {
+          if (userChoice === 1) {
+            currentResult = "Ничья!";
+          } else if (userChoice === 2) {
+            currentResult = "Вы проиграли!";
+            scoreCounterComp++;
+          } else {
+            currentResult = "Вы выиграли!";
+            scoreCounterUser++;
+          }
+        }
+
+        if (computerChoice === 2) {
+          if (userChoice === 2) {
+            currentResult = "Ничья!";
+          } else if (userChoice === 3) {
+            currentResult = "Вы проиграли!";
+            scoreCounterComp++;
+          } else {
+            currentResult = "Вы выиграли!";
+            scoreCounterUser++;
+          }
+        }
+
+        if (computerChoice === 3) {
+          if (userChoice === 3) {
+            currentResult = "Ничья!";
+          } else if (userChoice === 1) {
+            currentResult = "Вы проиграли!";
+            scoreCounterComp++;
+          } else {
+            currentResult = "Вы выиграли!";
+            scoreCounterUser++;
+          }
+        }
+        continueGame = confirm(
+          `Вы выбрали - ${itemsTable[userChoice - 1]}, компьютер - ${
+            itemsTable[computerChoice - 1]
+          }.\n${currentResult}\nСчет: компьютер - ${scoreCounterComp}, игрок - ${scoreCounterUser}\nПродолжим?`
+        );
+        if (continueGame === true) {
+          game();
+        }
+      }
+      game();
+
+      // 4. Напишите функцию, которая возвращает n-е число Фибоначчи. Для решения используйте цикл.
+      const fibNumber = inputNum("порядковый номер числа Фибоначчи");
+
+      function fibDP(m) {
+        let a = 1;
+        let b = 1;
+        for (let i = 3; i <= m; i++) {
+          let c = a + b;
+          (a = b), (b = c);
+        }
+        return b;
+      }
+
+      alert(`${fibNumber}-oe число Фибоначчи = ${fibDP(fibNumber)}`);
+    </script>
+  </body>
+</html>
