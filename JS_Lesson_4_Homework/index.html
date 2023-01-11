@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW_Lesson_4_JS</title>
+  </head>
+  <body>
+    <script>
+      // // 1. Создать объект Point, содержащий два свойства: "x" и "y" — координаты точки, и метод GetQuadrant, вычисляющий, в каком квадранте в декартовой системе координат находится данная точка.
+      // const point = {};
+      // let coord, quadrant;
+      // let repeatGetQuadrant = true;
+
+      // function getCoordinate(message) {
+      //   do {
+      //     coord = prompt(`Введите ${message}: `);
+      //   } while (isNaN(+coord) || coord === null || coord === "");
+      //   return +coord;
+      // }
+
+      // point.getQuadrant = function () {
+      //   this.x = getCoordinate("координату Х");
+      //   this.y = getCoordinate("координату Y");
+      //   if (this.x === 0) {
+      //     if (this.y === 0) {
+      //       return (quadrant = "начало координат");
+      //     } else {
+      //       return (quadrant = "ось Y");
+      //     }
+      //   } else if (this.y === 0) {
+      //     return (quadrant = "ось Х");
+      //   } else if (this.x > 0) {
+      //     if (this.y > 0) {
+      //       return (quadrant = "I-й квадрант");
+      //     } else {
+      //       return (quadrant = "IV-й квадрант");
+      //     }
+      //   } else {
+      //     if (this.y > 0) {
+      //       return (quadrant = "II-й квадрант");
+      //     } else {
+      //       return (quadrant = "III-й квадрант");
+      //     }
+      //   }
+      // };
+
+      // while (repeatGetQuadrant) {
+      //   repeatGetQuadrant = confirm(
+      //     `${point.getQuadrant()}\nПроверить еще одну точку?`
+      //   );
+      // }
+
+      // //  2. Создать объект Calculator, который должен содержать методы для расчета суммы, разности, произведения и частного двух чисел.
+      // //  Протестировать данный объект, принимая от пользователя значения двух операндов и знак операции.
+      // //  В зависимости от принятого знака операции, вызвать соответствующий метод.
+
+      // const calculator = {};
+      // calculator.signArr = ["+", "-", "*", "/"];
+      // repeatCalculator = true;
+
+      // calculator.add = function () {
+      //   return this.x + this.y;
+      // };
+      // calculator.minus = function () {
+      //   return this.x - this.y;
+      // };
+      // calculator.multiply = function () {
+      //   return this.x * this.y;
+      // };
+      // calculator.div = function () {
+      //   return this.y != 0 ? this.x / this.y : "бесконечность";
+      // };
+
+      // calculator.calculate = function () {
+      //   this.x = getCoordinate("первое число");
+      //   do {
+      //     this.sign = prompt(`Введите знак операции: *  +  /  -`);
+      //   } while (this.signArr.indexOf(this.sign) === -1);
+      //   this.y = getCoordinate("второе число");
+      //   if (this.sign === "*") {
+      //     return this.multiply();
+      //   } else if (this.sign === "-") {
+      //     return this.minus();
+      //   } else if (this.sign === "+") {
+      //     return this.add();
+      //   } else {
+      //     return this.div();
+      //   }
+      // };
+
+      // while (repeatCalculator) {
+      //   let calcResult = calculator.calculate();
+      //   repeatCalculator = confirm(
+      //     `${calculator.x} ${calculator.sign} ${calculator.y} = ${calcResult}\nПосчитаем еще?`
+      //   );
+      // }
+
+      //  3. Создать массив, который будет хранить в себе информацию о сотрудниках предприятия. Каждый элемент масива — объект,
+      //  содержащий свойства: name, sName, age, occupation, и метод show, который выводит всю информацию о пользователе.
+      //  Реализовать заполнение массива пользователем. По окончанию заполнения — вывести информацию о сотрудниках.
+      const staffArray = [];
+      let counter = 0;
+      let repeatAddStaff;
+
+      function addEmployee() {
+        const employee = {};
+        ++counter;
+        employee.counter = counter;
+        employee.name = prompt("Имя работника:");
+        employee.sName = prompt("Фамилия работника:");
+        employee.age = +prompt("Возраст работника:");
+        employee.occupation = prompt("Профессия работника:");
+        employee.show = function () {
+          document.write(
+            `${this.counter}. ${this.sName} ${this.name}, ${this.occupation}, ${this.age}, $${this.salary} <br>`
+          );
+        };
+        staffArray.push(employee);
+      }
+      //  4. Для предыдущего задания создайте функцию, которая будет принимать в себя массив объектов-сотрудников, и каждому из объектов
+      //        будет добавлять новое свойство "salary", хранящее зарплату сотрудника.
+      //        Зарплата расчитывается, исходя из значения свойства "occupation" следующим образом:
+      //            • "director" — 3000;
+      //            • "manager" — 1500;
+      //            • "programmer" — 2000;
+      //            • для остальных значений — 1000.
+      //        После выполнения функции — вывести информацию о сотрудниках.
+
+      function addSalary(element) {
+        if (element.occupation === "director") {
+          element.salary = 3000;
+        } else if (element.occupation === "manager") {
+          element.salary = 1500;
+        } else if (element.occupation === "programmer") {
+          element.salary = 2000;
+        } else {
+          element.salary = 1000;
+        }
+      }
+
+      do {
+        repeatAddStaff = confirm("Ввести данные работника?");
+        if (repeatAddStaff) {
+          addEmployee();
+        }
+      } while (repeatAddStaff);
+
+      for (let element of staffArray) {
+        addSalary(element);
+        element.show();
+      }
+
+      // 5. Для задания 3 создать метод, позволяющий отсортировать массив сотрудников по одному из свойств: name, sName, age, occupation, salary.
+      //  Параметр для сортировки принимается от пользователя.
+      //  После выполнения функции — вывести информацию о сотрудниках.
+
+      const propertyList = [0, 1, 2, 3, 4, 5];
+      let sortValue;
+      let sortWord;
+
+      function sortStaffArray(property, sortWord) {
+        let sortedStaffArray = [];
+        for (let employee of staffArray) {
+          if (employee[property] == sortWord) {
+            sortedStaffArray.push(employee);
+            employee.show();
+          }
+        }
+        return sortedStaffArray;
+      }
+
+      do {
+        sortValue = +prompt(
+          `За яким параметром сортуємо?\n0 - name\n1 - sName\n2 - age\n3 - occupation\n4 - salary\n5 - не сортувати`
+        );
+        if (sortValue === 5) {
+          break;
+        } else if (propertyList.indexOf(sortValue) === -1) {
+          alert("Невірне значення! Введіть ще раз");
+        }
+      } while (propertyList.indexOf(sortValue) === -1);
+      if (sortValue != 5) {
+        sortWord = prompt("Введіть параметр сортування");
+        document.write(`<br>Результат сортування:<br>`);
+
+        switch (sortValue) {
+          case 0:
+            sortStaffArray("name", sortWord);
+            break;
+
+          case 1:
+            sortStaffArray("sName", sortWord);
+            break;
+
+          case 2:
+            sortStaffArray("age", sortWord);
+            break;
+
+          case 3:
+            sortStaffArray("occupation", sortWord);
+            break;
+
+          case 4:
+            sortStaffArray("salary", sortWord);
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
