@@ -8,94 +8,94 @@
   </head>
   <body>
     <script>
-      // // 1. Создать объект Point, содержащий два свойства: "x" и "y" — координаты точки, и метод GetQuadrant, вычисляющий, в каком квадранте в декартовой системе координат находится данная точка.
-      // const point = {};
-      // let coord, quadrant;
-      // let repeatGetQuadrant = true;
+      // 1. Создать объект Point, содержащий два свойства: "x" и "y" — координаты точки, и метод GetQuadrant, вычисляющий, в каком квадранте в декартовой системе координат находится данная точка.
+      const point = {};
+      let coord, quadrant;
+      let repeatGetQuadrant = true;
 
-      // function getCoordinate(message) {
-      //   do {
-      //     coord = prompt(`Введите ${message}: `);
-      //   } while (isNaN(+coord) || coord === null || coord === "");
-      //   return +coord;
-      // }
+      function getCoordinate(message) {
+        do {
+          coord = prompt(`Введите ${message}: `);
+        } while (isNaN(+coord) || coord === null || coord === "");
+        return +coord;
+      }
 
-      // point.getQuadrant = function () {
-      //   this.x = getCoordinate("координату Х");
-      //   this.y = getCoordinate("координату Y");
-      //   if (this.x === 0) {
-      //     if (this.y === 0) {
-      //       return (quadrant = "начало координат");
-      //     } else {
-      //       return (quadrant = "ось Y");
-      //     }
-      //   } else if (this.y === 0) {
-      //     return (quadrant = "ось Х");
-      //   } else if (this.x > 0) {
-      //     if (this.y > 0) {
-      //       return (quadrant = "I-й квадрант");
-      //     } else {
-      //       return (quadrant = "IV-й квадрант");
-      //     }
-      //   } else {
-      //     if (this.y > 0) {
-      //       return (quadrant = "II-й квадрант");
-      //     } else {
-      //       return (quadrant = "III-й квадрант");
-      //     }
-      //   }
-      // };
+      point.getQuadrant = function () {
+        this.x = getCoordinate("координату Х");
+        this.y = getCoordinate("координату Y");
+        if (this.x === 0) {
+          if (this.y === 0) {
+            return (quadrant = "начало координат");
+          } else {
+            return (quadrant = "ось Y");
+          }
+        } else if (this.y === 0) {
+          return (quadrant = "ось Х");
+        } else if (this.x > 0) {
+          if (this.y > 0) {
+            return (quadrant = "I-й квадрант");
+          } else {
+            return (quadrant = "IV-й квадрант");
+          }
+        } else {
+          if (this.y > 0) {
+            return (quadrant = "II-й квадрант");
+          } else {
+            return (quadrant = "III-й квадрант");
+          }
+        }
+      };
 
-      // while (repeatGetQuadrant) {
-      //   repeatGetQuadrant = confirm(
-      //     `${point.getQuadrant()}\nПроверить еще одну точку?`
-      //   );
-      // }
+      while (repeatGetQuadrant) {
+        repeatGetQuadrant = confirm(
+          `${point.getQuadrant()}\nПроверить еще одну точку?`
+        );
+      }
 
-      // //  2. Создать объект Calculator, который должен содержать методы для расчета суммы, разности, произведения и частного двух чисел.
-      // //  Протестировать данный объект, принимая от пользователя значения двух операндов и знак операции.
-      // //  В зависимости от принятого знака операции, вызвать соответствующий метод.
+      //  2. Создать объект Calculator, который должен содержать методы для расчета суммы, разности, произведения и частного двух чисел.
+      //  Протестировать данный объект, принимая от пользователя значения двух операндов и знак операции.
+      //  В зависимости от принятого знака операции, вызвать соответствующий метод.
 
-      // const calculator = {};
-      // calculator.signArr = ["+", "-", "*", "/"];
-      // repeatCalculator = true;
+      const calculator = {};
+      calculator.signArr = ["+", "-", "*", "/"];
+      repeatCalculator = true;
 
-      // calculator.add = function () {
-      //   return this.x + this.y;
-      // };
-      // calculator.minus = function () {
-      //   return this.x - this.y;
-      // };
-      // calculator.multiply = function () {
-      //   return this.x * this.y;
-      // };
-      // calculator.div = function () {
-      //   return this.y != 0 ? this.x / this.y : "бесконечность";
-      // };
+      calculator.add = function () {
+        return this.x + this.y;
+      };
+      calculator.minus = function () {
+        return this.x - this.y;
+      };
+      calculator.multiply = function () {
+        return this.x * this.y;
+      };
+      calculator.div = function () {
+        return this.y != 0 ? this.x / this.y : "бесконечность";
+      };
 
-      // calculator.calculate = function () {
-      //   this.x = getCoordinate("первое число");
-      //   do {
-      //     this.sign = prompt(`Введите знак операции: *  +  /  -`);
-      //   } while (this.signArr.indexOf(this.sign) === -1);
-      //   this.y = getCoordinate("второе число");
-      //   if (this.sign === "*") {
-      //     return this.multiply();
-      //   } else if (this.sign === "-") {
-      //     return this.minus();
-      //   } else if (this.sign === "+") {
-      //     return this.add();
-      //   } else {
-      //     return this.div();
-      //   }
-      // };
+      calculator.calculate = function () {
+        this.x = getCoordinate("первое число");
+        do {
+          this.sign = prompt(`Введите знак операции: *  +  /  -`);
+        } while (this.signArr.indexOf(this.sign) === -1);
+        this.y = getCoordinate("второе число");
+        if (this.sign === "*") {
+          return this.multiply();
+        } else if (this.sign === "-") {
+          return this.minus();
+        } else if (this.sign === "+") {
+          return this.add();
+        } else {
+          return this.div();
+        }
+      };
 
-      // while (repeatCalculator) {
-      //   let calcResult = calculator.calculate();
-      //   repeatCalculator = confirm(
-      //     `${calculator.x} ${calculator.sign} ${calculator.y} = ${calcResult}\nПосчитаем еще?`
-      //   );
-      // }
+      while (repeatCalculator) {
+        let calcResult = calculator.calculate();
+        repeatCalculator = confirm(
+          `${calculator.x} ${calculator.sign} ${calculator.y} = ${calcResult}\nПосчитаем еще?`
+        );
+      }
 
       //  3. Создать массив, который будет хранить в себе информацию о сотрудниках предприятия. Каждый элемент масива — объект,
       //  содержащий свойства: name, sName, age, occupation, и метод show, который выводит всю информацию о пользователе.
