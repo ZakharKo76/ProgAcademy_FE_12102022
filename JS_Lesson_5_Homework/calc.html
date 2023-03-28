@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+      .body {
+        width: 450px;
+        border: 1px solid;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 5px 20px;
+        background: #d7ccc8;
+        border-radius: 10px;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75),
+          inset -3px -2px 19px 1px rgba(84, 83, 84, 1);
+        position: relative;
+      }
+      .results {
+        width: 93%;
+        margin: 20px auto;
+        font-family: "Audiowide", cursive;
+        text-align: right;
+      }
+      #expression,
+      #result {
+        background: #607d8b;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding-right: 5px;
+      }
+      #result {
+        height: 50px;
+        font-size: 2em;
+        border-bottom: none;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      #expression {
+        height: 20px;
+        border-top: none;
+        color: #263238;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        overflow: hidden;
+      }
+
+      .maths {
+        font-size: 1.5em;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-auto-flow: column;
+      }
+      .clears {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .operation,
+      .operation-ext {
+        font-size: 1.15em;
+      }
+
+      .clears * {
+        background: #ef5350;
+        color: white;
+        font-size: 1.5em;
+      }
+
+      .clears {
+        position: absolute;
+        right: 20px;
+        top: 113px;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        text-align: center;
+        outline: none;
+        font-family: "Audiowide", cursive;
+        box-shadow: 0px 3px 0px 0px #212121;
+      }
+      .equals {
+        width: 135px;
+        font-size: 1.5em;
+      }
+      #theme {
+        /* height: 50%; */
+        background: linear-gradient(to bottom right, red, yellow, blue, orange);
+      }
+      button:active {
+        transform: translateY(2px);
+      }
+
+      .number,
+      .operation,
+      .operation-ext,
+      .equals {
+        background: #263238;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <div class="results">
+        <div id="result"></div>
+        <div id="expression"></div>
+      </div>
+      <div class="maths">
+        <!-- <div class="numbers"> -->
+        <button class="number" id="1">1</button>
+        <button class="number" id="4">4</button>
+        <button class="number" id="7">7</button>
+        <button class="number" id=".">.</button>
+        <button class="number" id="2">2</button>
+        <button class="number" id="5">5</button>
+        <button class="number" id="8">8</button>
+        <button class="number" id="0">0</button>
+        <button class="number" id="3">3</button>
+        <button class="number" id="6">6</button>
+        <button class="number" id="9">9</button>
+        <button class="operation-ext" id="div">%</button>
+        <!-- </div> -->
+        <!-- <div class="operations"> -->
+        <button class="operation" id="*">×</button>
+        <button class="operation" id="/">÷</button>
+        <button class="operation" id="+">+</button>
+        <button class="operation" id="-">-</button>
+        <button class="operation-ext" id="inv">+/-</button>
+        <button class="operation-ext" id="pow">
+          x<sup><sup>y</sup></sup>
+        </button>
+        <button class="operation-ext" id="sqrt">&#8730;</button>
+        <button class="equals" id="=">=</button>
+        <!-- </div> -->
+      </div>
+      <div class="clears">
+        <button id="clear">AC</button>
+        <button id="ce">CE</button>
+        <button id="theme"></button>
+      </div>
+    </div>
+    <script>
+      const result = document.querySelector("#result"),
+        expression = document.querySelector("#expression"),
+        // num = document.querySelectorAll(".number:not(.equals)"),
+        num = document.querySelectorAll(".number"),
+        operation = document.querySelectorAll(".operation"),
+        inv = document.querySelector("#inv"),
+        equals = document.querySelector(".equals"),
+        clear = document.querySelector("#clear"),
+        ce = document.querySelector("#ce"),
+        math = document.querySelector(".maths"),
+        body = document.querySelector(".body"),
+        sqrt = document.querySelector("#sqrt"),
+        div = document.querySelector("#div"),
+        pow = document.querySelector("#pow");
+      let ex = "",
+        theme = document.querySelector("#theme");
+      result.innerHTML = "0";
+
+      function clickN() {
+        // клік цифри
+        if (!ex || typeof ex === "number" || ex === "0") {
+          expression.innerHTML = this.id;
+          ex = this.id;
+        } else {
+          expression.innerHTML += this.id;
+          ex += this.id;
+        }
+        result.innerHTML = ex.split(/\/|\*|\+|-|=/).pop();
+        // запобігання невірному використанню крапки
+        if (!result.innerHTML.match(/\.+\d*\./)) {
+          checkLength(result.innerHTML);
+        } else {
+          result.innerHTML = result.innerHTML.slice(0, -1);
+          expression.innerHTML = expression.innerHTML.slice(0, -1);
+          ex = ex.slice(0, -1);
+        }
+      }
+
+      function clickO() {
+        // клік операції
+        if (!ex) {
+          return;
+        }
+        ex = ex.toString().replace(/=/, "");
+        if (ex.match(/\/|\*|\+|-|=/)) {
+          // запобігання задвоєнню знаків
+          if (ex[ex.length - 1].match(/\/|\*|\+|-/)) {
+            ex = ex.slice(0, -1);
+            expression.innerHTML = expression.innerHTML.slice(0, -1);
+          }
+          ex = eval(ex).toString();
+        }
+        expression.innerHTML = expression.innerHTML.replace(/=/, "") + this.id;
+        ex += this.id;
+        result.innerHTML = this.id;
+      }
+
+      function doCE(arg) {
+        arg = arg.split(/([\/\*\+\-\=])/g);
+        arg.splice(-1, 1);
+        return arg.join("");
+      }
+
+      Array.from(num).forEach(function (element) {
+        element.addEventListener("click", clickN);
+      });
+
+      Array.from(operation).forEach(function (element) {
+        element.addEventListener("click", clickO);
+      });
+
+      // зтирання всіх даних
+      clear.addEventListener("click", () => {
+        result.innerHTML = "";
+        expression.innerHTML = "";
+        ex = "";
+      });
+
+      // зтирання останнього аргумента
+      ce.addEventListener("click", () => {
+        if (!expression.innerHTML.match(/=$/)) {
+          expression.innerHTML = doCE(expression.innerHTML);
+          ex = doCE(ex);
+          result.innerHTML = 0;
+        }
+      });
+
+      // розрахунок
+      equals.addEventListener("click", () => {
+        let tempEx;
+        if (!ex) {
+          result.innerHTML = "0";
+        } else if (
+          expression.innerHTML[expression.innerHTML.length - 1].match(/=/)
+        ) {
+          return;
+        } else {
+          if (ex[ex.length - 1].match(/\/|\*|\+|-|&#8730;/)) {
+            temp = ex[ex.length - 1];
+            ex = ex.slice(0, -1);
+            expression.innerHTML = expression.innerHTML.slice(0, -1);
+            tempEx = ex;
+            ex = eval(ex);
+            expression.innerHTML = tempEx + "=";
+            result.innerHTML = trim12(ex);
+
+            return;
+          }
+          ex = eval(ex);
+          expression.innerHTML += "=";
+          result.innerHTML = trim12(ex);
+        }
+      });
+
+      function checkLength(arg) {
+        // перевірка довжини введеного числа
+        if (arg.toString().length > 14) {
+          expression.innerHTML = "number too long".toUpperCase();
+          result.innerHTML = "0";
+          ex = "0";
+        }
+      }
+
+      function trim12(arg) {
+        // зменшення довжини розрахунку
+        if (arg.toString().length > 14) {
+          ex = parseFloat(arg.toPrecision(12));
+          if (ex.toString().length > 14) {
+            ex = ex.toExponential(9);
+          }
+          return ex;
+        } else {
+          return arg;
+        }
+      }
+
+      // операція квадратного кореня
+      // операція ступеню
+      // операція процентів
+      div.addEventListener("click", () => {
+        if (!result.innerHTML.match(/\/|\*|\+|-|=|&#8730;/)) {
+          let array = ex.split(/([\/\*\+\-\=])/g);
+          array[array.length - 1] = array[array.length - 1] / 100;
+          result.innerHTML = array[array.length - 1];
+          expression.innerHTML += "%";
+          ex = array.join("");
+        }
+      });
+
+      // операція зміни знаку
+      inv.addEventListener("click", () => {
+        ex = ex.toString();
+        if (!ex || ex[ex.length - 1].match(/\/|\*|\+|-/)) {
+          return;
+        }
+        if (expression.innerHTML.match(/=$/)) {
+          result.innerHTML = +result.innerHTML * -1;
+          expression.innerHTML = result.innerHTML;
+          ex = expression.innerHTML;
+          return;
+        }
+        let array = ex.split(/([\/\*\+\=])/g);
+        array[array.length - 1] = +array[array.length - 1] * -1;
+        result.innerHTML = array[array.length - 1];
+        ex = array.join("");
+        expression.innerHTML = ex;
+      });
+
+      // застосування випадкової кольорової схеми
+      theme.addEventListener("click", function () {
+        const randButtonColor =
+          "rgb(" +
+          Math.floor(Math.random() * 100) +
+          "," +
+          Math.floor(Math.random() * 100) +
+          "," +
+          Math.floor(Math.random() * 100) +
+          ")";
+        const randButtonTextColor =
+          "rgb(" +
+          (100 + Math.floor(Math.random() * 155)) +
+          "," +
+          (100 + Math.floor(Math.random() * 155)) +
+          "," +
+          (100 + Math.floor(Math.random() * 155)) +
+          ")";
+        body.style.background =
+          "rgb(" +
+          Math.floor(Math.random() * 255) +
+          "," +
+          Math.floor(Math.random() * 255) +
+          "," +
+          Math.floor(Math.random() * 255) +
+          ")";
+        for (element of math.children) {
+          element.style.background = randButtonColor;
+          element.style.color = randButtonTextColor;
+        }
+      });
+    </script>
+  </body>
+</html>
