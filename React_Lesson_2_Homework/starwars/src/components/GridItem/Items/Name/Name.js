@@ -8,7 +8,7 @@ function Name(props) {
     <>
       <div className="item__header">
         <div className="item__name">
-          <h3>{name} :</h3>
+          <h3>{name}&nbsp;:</h3>
         </div>
         <div className="item__name">
           <h3>{fullname}</h3>
