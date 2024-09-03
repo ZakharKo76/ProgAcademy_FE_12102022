@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINE MENU</title>
+    <style>
+
+	@font-face {
+    font-family: 'fonts/Magistral';
+    src: url('fonts/fonts/Magistral-BoldItalic.eot');
+    src: local('fonts/Magistral Bold Italic'), local('fonts/Magistral-BoldItalic'),
+        url('fonts/Magistral-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Magistral-BoldItalic.woff2') format('woff2'),
+        url('fonts/Magistral-BoldItalic.woff') format('woff'),
+        url('fonts/Magistral-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+        body {
+            font-family: 'Magistral';
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+	    background: linear-gradient(to bottom right, #33ccff 0%, #003399 100%);
+            /* <!background-color: #8b0000;> */
+            color: #fff;
+   font-size: 150%;
+            padding: 5px;
+            text-align: center;
+        }
+h1 {
+    display: block;
+    font-size: 2em;
+	color: white;
+    margin-block-start: 0.33em;
+    margin-block-end: 0.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .wine-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+            max-width: calc(33.333% - 40px);
+            min-width: 280px;
+            text-align: justify;
+        }
+        .wine-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .wine-card h3 {
+            margin-top: 15px;
+margin-bottom: 5px;
+            font-size: 1.5em;
+        }
+        .wine-card p {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .wine-card {
+                flex: 1 1 calc(50% - 40px);
+                max-width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .wine-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Винна Карта</h1>
+    </header>
+    <div class="container">
+        <div class="wine-card">
+            <img src="chianti.jpg" alt="Вино 1">
+            <h3 style = "color:red; text-align:center;">МАРС</h3>
+            <p style = "color:red; text-align:center;"><strong>Сухе Червоне Вино</strong></p>
+<p><strong>К'янті (Chianti)</strong> ― червоне італійське вино, що виробляється в Тоскані. Марка вина є контрольованою за походженням.</p> 
+<p> <strong> Смак: </strong>
+Класичне червоне вино з багатим ароматом чорних ягід та легкими нотками дуба. Солодкі таніни переплітаються з приємними фруктовими тонами</p>
+
+<p><strong>Аромат:</strong>
+Вишні та сливи, посилені нотами квітів фіалки та пряних спецій.</p>
+<p><strong>Сорт винограду:</strong>
+Санджовезе (не менше 80%), Канайоло, Мальвазія
+</p>
+        </div>
+        <div class="wine-card">
+            <img src="wine2.jpg" alt="Вино 2">
+            <h3 style = "color:green; text-align:center;">ВЕНЕРА</h3>
+            <p style = "color:green; text-align:center;"><strong>Напівсухе Біле Вино</strong></p>
+            <p><strong>Vinho Verde 500</strong> ― нетривіальне біле напівсухе вино з найкращого винного регіону Португалії, Виньо Верде.</p> 
+<p> <strong> Смак: </strong>
+Збалансований, фруктовий смак з легкою ігристістю та приємним тривалим післясмаком</p>
+
+<p><strong>Аромат:</strong>
+Неймовірна симфонія хрусткого зеленого яблука, цитрусових, тропічного ананаса та дюшесу</p>
+<p><strong>Сорт винограду:</strong>
+Альбаріньо, Траядура, Лоурейру, Арінто
+</p>
+        </div>
+        <div class="wine-card">
+            <img src="wine3.jpg" alt="Вино 3">
+            <h3 style = "color:#e340bb; text-align:center;">ЮПІТЕР</h3>
+            <p style = "color:#e340bb; text-align:center;"><strong>Напівсухе Рожеве Вино</strong></p>
+ <p><strong>Vinho Verde 500, Adega Ponte da Barca</strong> ― рожеве напівсухе вино з найкращого винного регіону Португалії, Виньо Верде. Середній вік лоз досягає 15 років. Урожай збирають вручну по досягненню плодами максимальної стиглості</p> 
+<p> <strong> Смак: </strong>
+Гармонійний, свіжий, легкий, фруктові тони з пряними нюансами та приємним післясмаком.</p>
+
+<p><strong>Аромат:</strong>
+Полуниця, зелене яблуко, цитрусові фрукти, дюшес
+</p>
+<p><strong>Сорт винограду:</strong>
+Альбаріньо, Лоурейру, Еспадейро
+</p>
+        </div>
+    </div>
+</body>
+</html>
